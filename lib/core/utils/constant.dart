@@ -22,7 +22,8 @@ class AppConstant {
     "F4",
     "G1",
     "G2",
-    "G3"
+    "G3",
+    "EA"
   ];
 
   final List<String> courseList = [
@@ -31,7 +32,7 @@ class AppConstant {
     "BETON ARME",
     "CONSTRUCTION MECANIQUE",
     "DROIT ADMIN ET DU TRAVAIL",
-    "ECONIMIE",
+    "ECONOMIE",
     "ELECTROTECH",
     "ESPAGNOL",
     "EST",
@@ -46,6 +47,128 @@ class AppConstant {
     "RDM",
     "SVT",
   ];
+
+  final Map<String, dynamic> allCourses = {
+    "A1": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 5},
+      "PHILO":  {"Note": 0, "Coefficient": 4},
+      "HIST-GEO":  {"Note": 0, "Coefficient": 3},
+      "LV1":  {"Note": 0, "Coefficient": 3},
+      "LV2":  {"Note": 0, "Coefficient": 2},
+      "MATHS":  {"Note": 0, "Coefficient": 2},
+      "SVT":  {"Note": 0, "Coefficient": 2},
+    },
+    "A2": {
+      "FRANCAIS":  {"Note": 0, "Coefficient": 4},
+      "PHILO":  {"Note": 0, "Coefficient": 3},
+      "HIST-GEO":  {"Note": 0, "Coefficient": 5},
+      "LV1":  {"Note": 0, "Coefficient": 3},
+      "LV2":   {"Note": 0, "Coefficient": 2},
+      "MATHS":   {"Note": 0, "Coefficient": 2},
+      "SVT":   {"Note": 0, "Coefficient": 2},
+    },
+    "B": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 4},
+      "PHILO":   {"Note": 0, "Coefficient": 3},
+      "HIST-GEO":   {"Note": 0, "Coefficient": 4},
+      "LV1": {"Note": 0, "Coefficient": 2},
+      "ECONOMIE": {"Note": 0, "Coefficient": 4},
+      "MATHS": {"Note": 0, "Coefficient": 2},
+      "SVT": {"Note": 0, "Coefficient": 2},
+    },
+    "C": {
+      "MATHS": {"Note": 0, "Coefficient": 6},
+      "PCT": {"Note": 0, "Coefficient": 5},
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "ANGLAIS": {"Note": 0, "Coefficient": 2},
+      "SVT": {"Note": 0, "Coefficient": 2},
+      "HIST-GEO": {"Note": 0, "Coefficient": 2},
+      "PHILO": {"Note": 0, "Coefficient": 2},
+    },
+    "D": {
+      "MATHS": {"Note": 0, "Coefficient": 4},
+      "PCT": {"Note": 0, "Coefficient": 4},
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "ANGLAIS": {"Note": 0, "Coefficient": 2},
+      "SVT": {"Note": 0, "Coefficient": 5},
+      "HIST-GEO": {"Note": 0, "Coefficient": 2},
+      "PHILO": {"Note": 0, "Coefficient": 2},
+    },
+    "E": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "MATHS": {"Note": 0, "Coefficient": 5},
+      "PCT": {"Note": 0, "Coefficient": 4},
+      "CONSTRUCTION MECANIQUE": {"Note": 0, "Coefficient": 3},
+      "MANIPULATION": {"Note": 0, "Coefficient": 3},
+      "ETUDE DE FABRICATION": {"Note": 0, "Coefficient": 2},
+    },
+    "G1": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 3},
+      "ETUDE DE CAS": {"Note": 0, "Coefficient": 4},
+      "ECONOMIE": {"Note": 0, "Coefficient": 3},
+      "ANGLAIS": {"Note": 0, "Coefficient": 2},
+      "COMPTE-RENDU PV + RAPPORT": {"Note": 0, "Coefficient": 3},
+      "DROIT ADMINISTRATIF ET DROIT DU TRAVAIL": {"Note": 0, "Coefficient": 2},
+    },
+    "G2": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 3},
+      "ETUDE DE CAS": {"Note": 0, "Coefficient": 6},
+      "ECONOMIE": {"Note": 0, "Coefficient": 3},
+      "ANGLAIS": {"Note": 0, "Coefficient": 2},
+      "MATHEMAIQUES APPLIQUEES": {"Note": 0, "Coefficient": 3},
+      "DROIT": {"Note": 0, "Coefficient": 2},
+    },
+    "G3": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 3},
+      "ETUDE DE CAS": {"Note": 0, "Coefficient": 6},
+      "ECONOMIE": {"Note": 0, "Coefficient": 3},
+      "ANGLAIS": {"Note": 0, "Coefficient": 2},
+      "MATHEMAIQUES APPLIQUEES": {"Note": 0, "Coefficient": 3},
+      "DROIT": {"Note": 0, "Coefficient": 2},
+    },
+    "F1": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "MATHS": {"Note": 0, "Coefficient": 3},
+      "PCT": {"Note": 0, "Coefficient": 2},
+      "CONSTRUCTION MECANIQUE": {"Note": 0, "Coefficient": 3},
+      "MECANIQUE": {"Note": 0, "Coefficient": 2},
+      "AUTOMATIQUE": {"Note": 0, "Coefficient": 2},
+      "ETUDE D'OUTILLAGE": {"Note": 0, "Coefficient": 2},
+      "ANALYSE DE FABRICATION": {"Note": 0, "Coefficient": 3},
+    },
+    "F2": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "MATHS": {"Note": 0, "Coefficient": 3},
+      "PCT": {"Note": 0, "Coefficient": 2},
+      "CONSTRUCTION MECANIQUE": {"Note": 0, "Coefficient": 2},
+      "ETUDE D'UN SYSTEME TECHNIQUE": {"Note": 0, "Coefficient": 4},
+    },
+    "F3": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "MATHS": {"Note": 0, "Coefficient": 3},
+      "PCT": {"Note": 0, "Coefficient": 2},
+      "ELECTROTECHNIQUE": {"Note": 0, "Coefficient": 3},
+      "ETUDE D'UN SYSTEME TECHNIQUE": {"Note": 0, "Coefficient": 5},
+    },
+    "F4": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "MATHS": {"Note": 0, "Coefficient": 3},
+      "PCT": {"Note": 0, "Coefficient": 2},
+      "RESISTANCE DES MATERIAUX": {"Note": 0, "Coefficient": 3},
+      "BETON ARME": {"Note": 0, "Coefficient": 2},
+      "METRE ET ETUDE DE PRIX": {"Note": 0, "Coefficient": 2},
+      "PROCEDE DE CONSTRUCTION": {"Note": 0, "Coefficient": 2},
+    },
+    "EA": {
+      "FRANCAIS": {"Note": 0, "Coefficient": 2},
+      "ASSAINISSEMENT": {"Note": 0, "Coefficient": 3},
+      "MATHS": {"Note": 0, "Coefficient": 2},
+      "ANGLAIS": {"Note": 0, "Coefficient": 3},
+      "PCT": {"Note": 0, "Coefficient": 2},
+      "MOBILISATION DES RESSOURCES EN EAU": {"Note": 0, "Coefficient": 2},
+      "PROJET D'EXPLOITATION": {"Note": 0, "Coefficient": 2},
+    }
+  };
 
   final Map<String, dynamic> userData = {
     "Série": "C",
@@ -1195,7 +1318,7 @@ class AppConstant {
           "Environnement, Hygiène et Santé publique": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["SVT", "ECONIMIE", "HIST-GEO"],
+            "Matières": ["SVT", "ECONOMIE", "HIST-GEO"],
             "Métiers": ["Inspecteur d'action sanitaire"]
           }
         },
@@ -1204,7 +1327,7 @@ class AppConstant {
           "Gestion du cadre de vie": {
             "Bourse": 55,
             "Aide": 13,
-            "Matières": ["ECONIMIE", "FRANCAIS", "HIST-GEO"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "HIST-GEO"],
             "Métiers": [
               "Aménagenment, reboisement, sauvegarde environnemental et social",
               "Gestion et restairation de l'environnement"
@@ -1213,7 +1336,7 @@ class AppConstant {
           "Planification et Gestion des espaces urbains et ruraux": {
             "Bourse": 28,
             "Aide": 7,
-            "Matières": ["ECONIMIE", "FRANCAIS", "HIST-GEO"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "HIST-GEO"],
             "Métiers": ["Spécialiste en géomatique"]
           }
         },
@@ -1221,7 +1344,7 @@ class AppConstant {
           "Marketing": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Marketing et Communication Commerciale",
               "Responsable commercial",
@@ -1265,7 +1388,7 @@ class AppConstant {
           "Gestion des Ressources Humaines": {
             "Bourse": 4,
             "Aide": 2,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Gestion du personnel et des ressources humaines dans les entreprises privées et publiques"
             ]
@@ -1351,7 +1474,7 @@ class AppConstant {
           "Secrétariat de Gestion": {
             "Bourse": 43,
             "Aide": 17,
-            "Matières": ["ANGLAIS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ANGLAIS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des services administratifs (Secrétariat et assistant de Gestion)"
             ]
@@ -1359,7 +1482,7 @@ class AppConstant {
           "Sciences et Techniques de l'Information Documentaire": {
             "Bourse": 43,
             "Aide": 17,
-            "Matières": ["ANGLAIS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ANGLAIS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien supérieur en archivistique",
               "Technicien supérieur Documentariste"
@@ -1370,7 +1493,7 @@ class AppConstant {
           "Négoce International": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["MATHS", "ANGLAIS", "ECONIMIE"],
+            "Matières": ["MATHS", "ANGLAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien en négoce international",
               "Gestionnaire des relations",
@@ -1387,7 +1510,7 @@ class AppConstant {
           "Gestion des Relations Maritimes Internationales": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["MATHS", "ANGLAIS", "ECONIMIE"],
+            "Matières": ["MATHS", "ANGLAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien en négoce international",
               "Gestionnaire des relations",
@@ -1404,7 +1527,7 @@ class AppConstant {
           "Commerce International": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["MATHS", "ANGLAIS", "ECONIMIE"],
+            "Matières": ["MATHS", "ANGLAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien en négoce international",
               "Gestionnaire des relations",
@@ -1474,7 +1597,7 @@ class AppConstant {
           "Sciences Economiques et de Gestion (Tronc commun)": {
             "Bourse": 225,
             "Aide": 1740,
-            "Matières": ["MATHS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["MATHS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Services déconcentrés de l'Etat, Collectivités locales, associations et ONG",
               "Analystes, statisticiens, Comptable",
@@ -1499,7 +1622,7 @@ class AppConstant {
           "Sciences et Techiques Comptables et Financières (STCF)": {
             "Bourse": 9,
             "Aide": 30,
-            "Matières": ["MATHS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["MATHS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Audit comptable oyu financier",
               "Contrôleur interne en banque et entreprise",
@@ -1543,7 +1666,7 @@ class AppConstant {
           "Gestion des Ressources Humaines": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Entreprises",
               "Assurance",
@@ -1557,7 +1680,7 @@ class AppConstant {
           "Analyse et Politique Economiques (APE)": {
             "Bourse": 26,
             "Aide": 60,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Politiques Economiques",
@@ -1569,7 +1692,7 @@ class AppConstant {
           "Economie Agricole (EA)": {
             "Bourse": 62,
             "Aide": 120,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Politiques Economiques",
@@ -1581,7 +1704,7 @@ class AppConstant {
           "Economie et Finance des Collectivités Locales (EFCL)": {
             "Bourse": 26,
             "Aide": 60,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Economie et Finance des Collectivités Locales",
@@ -1595,7 +1718,7 @@ class AppConstant {
           "Economie et Finance Internationales (EFI)": {
             "Bourse": 34,
             "Aide": 120,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Politiques Economiques et Monétaires",
@@ -1607,7 +1730,7 @@ class AppConstant {
           "Entrepreneuriat et Gestion des Entreprises (EGE)": {
             "Bourse": 26,
             "Aide": 75,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Création et Gestion d'Activités",
@@ -1621,7 +1744,7 @@ class AppConstant {
           "Marketing et Management des Organisations (MMO)": {
             "Bourse": 15,
             "Aide": 54,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Management",
@@ -1634,7 +1757,7 @@ class AppConstant {
           "Finance et Comptabilité (FC)": {
             "Bourse": 85,
             "Aide": 300,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Auto emploi",
               "Cabinets Conseils en Finances",
@@ -6844,7 +6967,7 @@ class AppConstant {
           "Administration Générale": {
             "Bourse": 77,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des affaires étrangères",
               "Attaché des services administratifs",
@@ -6862,7 +6985,7 @@ class AppConstant {
           "Sciences et Techniques de l'Information Documentaire": {
             "Bourse": 43,
             "Aide": 17,
-            "Matières": ["ANGLAIS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ANGLAIS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien supérieur en archivistique",
               "Technicien supérieur Documentariste"
@@ -6875,7 +6998,7 @@ class AppConstant {
           "Gestion des Ressources Humaines": {
             "Bourse": 9,
             "Aide": 3,
-            "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+            "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
             "Métiers": [
               "Entreprises",
               "Assurance",
@@ -7082,7 +7205,7 @@ class AppConstant {
           "Administration Générale": {
             "Bourse": 77,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des affaires étrangères",
               "Attaché des services administratifs",
@@ -7092,7 +7215,7 @@ class AppConstant {
           "Administration des Finances": {
             "Bourse": 77,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des affaires étrangères",
               "Attaché des services administratifs",
@@ -7110,7 +7233,7 @@ class AppConstant {
           "Sciences et Techniques de l'Information Documentaire": {
             "Bourse": 43,
             "Aide": 17,
-            "Matières": ["ANGLAIS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ANGLAIS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien supérieur en archivistique",
               "Technicien supérieur Documentariste"
@@ -7200,7 +7323,7 @@ class AppConstant {
           "Sciences Economiques et de Gestion (Tronc commun)": {
             "Bourse": 225,
             "Aide": 1740,
-            "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Services déconcentrés de l'Etat, Collectivités locales, associations et ONG",
               "Analystes, statisticiens, Comptable",
@@ -7225,7 +7348,7 @@ class AppConstant {
           "Sciences et Techiques Comptables et Financières (STCF)": {
             "Bourse": 9,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Audit comptable oyu financier",
               "Contrôleur interne en banque et entreprise",
@@ -7273,7 +7396,7 @@ class AppConstant {
           "Informatique de Gestion": {
             "Bourse": 64,
             "Aide": 14,
-            "Matières": ["MATHS", "ECONIMIE", "ETUDE DE CAS"],
+            "Matières": ["MATHS", "ECONOMIE", "ETUDE DE CAS"],
             "Métiers": [
               "Centre informatique",
               "Banque",
@@ -7588,7 +7711,7 @@ class AppConstant {
           "Administration Générale": {
             "Bourse": 77,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des affaires étrangères",
               "Attaché des services administratifs",
@@ -7598,7 +7721,7 @@ class AppConstant {
           "Administration des Finances": {
             "Bourse": 77,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ETUDE DE CAS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Attaché des affaires étrangères",
               "Attaché des services administratifs",
@@ -7616,7 +7739,7 @@ class AppConstant {
           "Sciences et Techniques de l'Information Documentaire": {
             "Bourse": 43,
             "Aide": 17,
-            "Matières": ["ANGLAIS", "FRANCAIS", "ECONIMIE"],
+            "Matières": ["ANGLAIS", "FRANCAIS", "ECONOMIE"],
             "Métiers": [
               "Technicien supérieur en archivistique",
               "Technicien supérieur Documentariste"
@@ -7680,7 +7803,7 @@ class AppConstant {
           "Sciences Economiques et de Gestion (Tronc commun)": {
             "Bourse": 225,
             "Aide": 1740,
-            "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Services déconcentrés de l'Etat, Collectivités locales, associations et ONG",
               "Analystes, statisticiens, Comptable",
@@ -7705,7 +7828,7 @@ class AppConstant {
           "Sciences et Techiques Comptables et Financières (STCF)": {
             "Bourse": 9,
             "Aide": 30,
-            "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+            "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
             "Métiers": [
               "Audit comptable oyu financier",
               "Contrôleur interne en banque et entreprise",
