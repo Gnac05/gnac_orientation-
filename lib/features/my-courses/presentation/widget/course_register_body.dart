@@ -8,12 +8,11 @@ import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course
 
 class CourseRegisterBody extends StatefulWidget {
   const CourseRegisterBody(
-      {Key? key,
+      {super.key,
       required this.courses,
       required this.myCourseBloc,
       required this.myClass,
-      required this.coursesMap})
-      : super(key: key);
+      required this.coursesMap});
   final List<String> courses;
   final MyCourseBloc myCourseBloc;
   final String myClass;

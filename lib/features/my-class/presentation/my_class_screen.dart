@@ -5,7 +5,7 @@ import 'package:gnac_orientation/features/my-class/presentation/widget/my_class_
 
 @RoutePage()
 class MyClassScreen extends StatelessWidget {
-const MyClassScreen({ Key? key }) : super(key: key);
+const MyClassScreen({ super.key });
 
   @override
   Widget build(BuildContext context){

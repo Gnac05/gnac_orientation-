@@ -5,7 +5,7 @@ import 'package:gnac_orientation/features/my-scores/presentation/widgets/my_scor
 
 @RoutePage()
 class MyScoresScreen extends StatelessWidget {
-  const MyScoresScreen({Key? key, required this.result}) : super(key: key);
+  const MyScoresScreen({super.key, required this.result});
   final Map<String, dynamic> result;
   @override
   Widget build(BuildContext context) {

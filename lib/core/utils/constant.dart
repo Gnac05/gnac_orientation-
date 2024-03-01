@@ -1,9 +1,10 @@
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 final AppConstant appConstant =  AppConstant();
 final MyCourseBloc myCourseBloc = MyCourseBloc();
 
-// @injectable
+@injectable
 class AppConstant {
   final appName = "Gnac Orientation";
 

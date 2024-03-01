@@ -6,7 +6,7 @@ import 'package:gnac_orientation/features/my-scores/domain/reposirtory/algo.dart
 part 'my_course_event.dart';
 part 'my_course_state.dart';
 
-// @injectable
+@injectable
 class MyCourseBloc extends Bloc<MyCourseEvent, MyCourseState> {
   MyCourseBloc()
       : super(

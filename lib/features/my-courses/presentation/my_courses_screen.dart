@@ -11,7 +11,7 @@ import 'package:gnac_orientation/features/my-courses/presentation/widget/my_cour
 
 @RoutePage()
 class MyCoursesScreen extends StatelessWidget {
-  const MyCoursesScreen({Key? key, required this.myClass}) : super(key: key);
+  const MyCoursesScreen({super.key, required this.myClass});
   final String myClass;
 
   @override

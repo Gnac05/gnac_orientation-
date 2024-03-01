@@ -5,7 +5,7 @@ import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 
 class CourseWidget extends StatelessWidget {
-  const CourseWidget({Key? key, required this.course, required this.coef, required this.note, required this.myCourseBloc, required this.courses, required this.myClass, required this.coursesMap}) : super(key: key);
+  const CourseWidget({super.key, required this.course, required this.coef, required this.note, required this.myCourseBloc, required this.courses, required this.myClass, required this.coursesMap});
   final String course;
   final int coef;
   final double note;

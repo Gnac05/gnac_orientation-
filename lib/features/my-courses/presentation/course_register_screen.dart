@@ -7,8 +7,7 @@ import 'package:gnac_orientation/features/my-courses/presentation/widget/course_
 @RoutePage()
 class CourseRegisterScreen extends StatelessWidget {
   const CourseRegisterScreen(
-      {Key? key, required this.courses, required this.myCourseBloc, required this.myClass, required this.coursesMap})
-      : super(key: key);
+      {super.key, required this.courses, required this.myCourseBloc, required this.myClass, required this.coursesMap});
   final List<String> courses;
   final MyCourseBloc myCourseBloc;
   final String myClass;

@@ -9,7 +9,7 @@ import 'package:gnac_orientation/main.dart';
 
 part 'app_router.gr.dart';
 
-// @injectable
+@injectable
 @AutoRouterConfig()
 class AppRouter extends _$AppRouter {
   @override

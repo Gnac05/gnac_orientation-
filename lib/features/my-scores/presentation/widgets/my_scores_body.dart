@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 
 class MyScoresBody extends StatelessWidget {
-  const MyScoresBody({Key? key, required this.result}) : super(key: key);
+  const MyScoresBody({super.key, required this.result});
   final Map<String, dynamic> result;
 
   @override

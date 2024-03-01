@@ -4,7 +4,7 @@ import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course
 import 'package:gnac_orientation/features/my-courses/presentation/widget/course_widget.dart';
 
 class MyCoursesBody extends StatelessWidget {
-  const MyCoursesBody({Key? key, required this.coursesMap, required this.myCourseBloc, required this.myClass, required this.courses}) : super(key: key);
+  const MyCoursesBody({super.key, required this.coursesMap, required this.myCourseBloc, required this.myClass, required this.courses});
   final Map<String, dynamic> coursesMap;
   final MyCourseBloc myCourseBloc;
   final String myClass;
@@ -12,11 +12,11 @@ class MyCoursesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _children = [];
+    List<Widget> myChildren = [];
     debugPrint("coursesMap: $coursesMap");
     if (coursesMap != {} && coursesMap['Error']!= 'Message' ) {
       coursesMap.forEach((key, value) {
-      _children.add(
+      myChildren.add(
         CourseWidget(
           course: key,
           coef: value['Coefficient'],
@@ -41,7 +41,7 @@ class MyCoursesBody extends StatelessWidget {
               textAlign: TextAlign.center,
               overflow: TextOverflow.clip,
             ),
-            Column(children: _children),
+            Column(children: myChildren),
             Padding(
               padding: const EdgeInsets.all(16),
               child: ElevatedButton(

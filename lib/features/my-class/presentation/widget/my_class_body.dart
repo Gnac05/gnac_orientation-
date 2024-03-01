@@ -7,7 +7,7 @@ import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart';
 
 class MyClassBody extends StatelessWidget {
-  const MyClassBody({Key? key}) : super(key: key);
+  const MyClassBody({super.key});
 
   @override
   Widget build(BuildContext context) {
