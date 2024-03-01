@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+@lazySingleton
 class AppTheme {
   final Color? appPrimaryColor = Colors.red[800];
   final Color? appSecondaryColor = Colors.blue[900];

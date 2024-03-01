@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 part 'my_class_event.dart';
 part 'my_class_state.dart';
 
-@injectable
+@lazySingleton
 class MyClassBloc extends Bloc<MyClassEvent, MyClassState> {
   MyClassBloc() : super(MyClassInitial()) {
     on<MyClassEvent>((event, emit) {

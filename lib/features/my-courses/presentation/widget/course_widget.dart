@@ -4,7 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class CourseWidget extends StatelessWidget {
   const CourseWidget({super.key, required this.course, required this.coef, required this.note, required this.myCourseBloc, required this.courses, required this.myClass, required this.coursesMap});
   final String course;

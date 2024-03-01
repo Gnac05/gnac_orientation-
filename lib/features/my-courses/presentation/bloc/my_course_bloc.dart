@@ -7,8 +7,10 @@ import 'package:injectable/injectable.dart';
 part 'my_course_event.dart';
 part 'my_course_state.dart';
 
+@lazySingleton
 @injectable
 class MyCourseBloc extends Bloc<MyCourseEvent, MyCourseState> {
+  @injectable
   MyCourseBloc()
       : super(
           MyCourseInitial(

@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 
 part 'app_router.gr.dart';
 
-@injectable
+@lazySingleton
 @AutoRouterConfig()
 class AppRouter extends _$AppRouter {
   @override

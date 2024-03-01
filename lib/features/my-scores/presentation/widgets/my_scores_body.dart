@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class MyScoresBody extends StatelessWidget {
   const MyScoresBody({super.key, required this.result});
   final Map<String, dynamic> result;

@@ -8,15 +8,17 @@ import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/widget/my_courses_body.dart';
+import 'package:injectable/injectable.dart';
 
 @RoutePage()
+@injectable
 class MyCoursesScreen extends StatelessWidget {
   const MyCoursesScreen({super.key, required this.myClass});
   final String myClass;
 
   @override
   Widget build(BuildContext context) {
-    MyCourseBloc myCourseBloc = appConstant.myCourseBloc;
+    final  myCourseBloc = MyCourseBloc();
     return BlocBuilder<MyCourseBloc, MyCourseState>(
       bloc: myCourseBloc,
       builder: (context, state) {

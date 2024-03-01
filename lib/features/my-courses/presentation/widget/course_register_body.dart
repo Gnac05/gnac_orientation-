@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gnac_orientation/core/presentation/app_title.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class CourseRegisterBody extends StatefulWidget {
   const CourseRegisterBody(
       {super.key,

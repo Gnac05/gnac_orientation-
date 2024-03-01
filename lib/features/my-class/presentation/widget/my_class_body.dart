@@ -6,14 +6,17 @@ import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class MyClassBody extends StatelessWidget {
   const MyClassBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final appConstant = AppConstant();
     String myClass = 'A1';
-    final MyClassBloc myClassBloc = MyClassBloc();
+    final myClassBloc = MyClassBloc();
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
