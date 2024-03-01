@@ -6,6 +6,7 @@ import 'package:gnac_orientation/features/my-courses/presentation/course_registe
 import 'package:gnac_orientation/features/my-courses/presentation/my_courses_screen.dart';
 import 'package:gnac_orientation/features/my-scores/presentation/my_scores_screen.dart';
 import 'package:gnac_orientation/main.dart';
+import 'package:injectable/injectable.dart';
 
 part 'app_router.gr.dart';
 

@@ -26,7 +26,7 @@ class MyCoursesScreen extends StatelessWidget {
           );
         }
         if (state is MyCoursesResults){
-          AppRouter().push(MyScoresRoute(result: state.results));
+          AutoRouter.of(context).push(MyScoresRoute(result: state.results));
         }
               final courses = (state is MyCourseInitial)? state.courses : (state is MyCoursesReady)? state.courses : AppConstant().courseList;
         final coursesMap = (state is MyCourseInitial)? state.coursesMap : (state is MyCoursesReady)? state.coursesMap : {'Error': 'Message'};
@@ -41,7 +41,7 @@ class MyCoursesScreen extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             onPressed: (state is MyCourseLoading)? null : () {
               myCourseBloc.add(AddCourse());
-              AppRouter().push(
+              AutoRouter.of(context).push(
                 CourseRegisterRoute(
                     courses: courses,
                     myCourseBloc: myCourseBloc,

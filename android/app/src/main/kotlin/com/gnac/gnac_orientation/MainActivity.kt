@@ -1,4 +1,4 @@
-package com.example.gnac_orientation
+package com.gnac.gnac_orientation
 
 import io.flutter.embedding.android.FlutterActivity
 

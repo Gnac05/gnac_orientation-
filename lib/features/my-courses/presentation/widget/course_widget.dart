@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
@@ -69,7 +70,7 @@ class CourseWidget extends StatelessWidget {
                 child: InkWell(
                   onTap: () {
                     myCourseBloc.add(EditCourse(course: course, note: note, coefficient: coef));
-                    AppRouter().push(CourseRegisterRoute(courses: courses, myCourseBloc: myCourseBloc, myClass: myClass, coursesMap: coursesMap));
+                    AutoRouter.of(context).push(CourseRegisterRoute(courses: courses, myCourseBloc: myCourseBloc, myClass: myClass, coursesMap: coursesMap));
                   },
                   child: FaIcon(FontAwesomeIcons.pencil,
                       size: 15, color: AppTheme().appSecondaryColor!),

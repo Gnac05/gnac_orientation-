@@ -1,9 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gnac_orientation/core/presentation/app_title.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
-import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 
 class CourseRegisterBody extends StatefulWidget {
@@ -175,7 +175,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                                       note: double.parse(noteController.text),
                                       lastCourses: widget.courses,
                                       lastCoursesMap: widget.coursesMap));
-                                  AppRouter().pop();
+                                  AutoRouter.of(context).pop();
                                 } else if (state is MyCourseEditing) {
                                   debugPrint('MyCourseEditing <======####');
                                   widget.myCourseBloc.add(UpdateCourse(
@@ -185,7 +185,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                                       note: double.parse(noteController.text),
                                       lastCourses: widget.courses,
                                       lastCoursesMap: widget.coursesMap));
-                                  AppRouter().pop();
+                                  AutoRouter.of(context).pop();
                                 }
                               } catch (e) {
                                 debugPrint("Error : $e");

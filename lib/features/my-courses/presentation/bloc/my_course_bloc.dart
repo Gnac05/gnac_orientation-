@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/features/my-scores/domain/reposirtory/algo.dart';
+import 'package:injectable/injectable.dart';
 
 part 'my_course_event.dart';
 part 'my_course_state.dart';

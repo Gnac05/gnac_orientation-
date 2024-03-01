@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gnac_orientation/core/presentation/app_title.dart';
@@ -95,7 +96,7 @@ class MyClassBody extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   debugPrint('##=======> Ma Série : $myClass');
-                  AppRouter().push(
+                  AutoRouter.of(context).push(
                     MyCoursesRoute(
                       myClass: myClass,
                     ),

@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 
-void main() {
+Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
    await getIt.reset();
