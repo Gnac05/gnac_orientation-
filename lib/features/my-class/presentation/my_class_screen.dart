@@ -5,12 +5,13 @@ import 'package:gnac_orientation/features/my-class/presentation/widget/my_class_
 
 @RoutePage()
 class MyClassScreen extends StatelessWidget {
+  static const routeName = '/class';
 const MyClassScreen({ super.key });
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: MyAppBar(context),
+      appBar: MyAppBar(context, withIcon: true,),
       body: const MyClassBody(),
     );
   }

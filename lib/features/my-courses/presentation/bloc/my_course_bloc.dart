@@ -10,12 +10,12 @@ part 'my_course_state.dart';
 @lazySingleton
 @injectable
 class MyCourseBloc extends Bloc<MyCourseEvent, MyCourseState> {
-  @injectable
-  MyCourseBloc()
+  final String myClass;
+  MyCourseBloc({required this.myClass})
       : super(
           MyCourseInitial(
-            courses: AppConstant().courseList,
-            coursesMap: const {'Error': 'Message'},
+            courses: AppConstant().allCourses[myClass].keys.toList(),
+            coursesMap: AppConstant().allCourses[myClass],
           ),
         ) {
     on<MyCourseEvent>(myCourse);

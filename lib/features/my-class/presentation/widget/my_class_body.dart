@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gnac_orientation/core/presentation/app_title.dart';
+import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
+import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
@@ -26,10 +27,10 @@ class MyClassBody extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const AppTitle(text: "Ma Série"),
-            const Text(
-              "Quelle est ta série ? On utilise le Guide d'orientation de cette année pour t'aider à mieux choisir ta filière de formation.",
-              overflow: TextOverflow.clip,
+            const InfoWidget(
+              title: "Quelle est ta série ?",
+              descrition:
+                  "On utilise le Guide d'orientation de cette année pour t'aider à mieux choisir ta filière de formation.",
             ),
             BlocBuilder<MyClassBloc, MyClassState>(
               bloc: myClassBloc,
@@ -53,18 +54,14 @@ class MyClassBody extends StatelessWidget {
                           child: Column(
                             children: List.generate(
                               indexColumn != 1
-                                  ? (appConstant.classList.length / 2)
-                                      .ceil()
+                                  ? (appConstant.classList.length / 2).ceil()
                                   : appConstant.classList.length -
-                                      (appConstant.classList.length /
-                                              2)
-                                          .ceil(),
+                                      (appConstant.classList.length / 2).ceil(),
                               (index) => Expanded(
                                 child: RadioListTile<String>(
                                   title: Text(
                                     appConstant.classList[
-                                        (appConstant.classList.length /
-                                                        2)
+                                        (appConstant.classList.length / 2)
                                                     .ceil() *
                                                 indexColumn +
                                             index],
@@ -74,8 +71,7 @@ class MyClassBody extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                   ),
                                   value: appConstant.classList[
-                                      (appConstant.classList.length /
-                                                      2)
+                                      (appConstant.classList.length / 2)
                                                   .ceil() *
                                               indexColumn +
                                           index],
@@ -95,8 +91,8 @@ class MyClassBody extends StatelessWidget {
               },
             ),
             Padding(
-              padding: const EdgeInsets.all(25),
-              child: ElevatedButton(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 40),
+              child: NextButtonWidget(
                 onPressed: () {
                   debugPrint('##=======> Ma Série : $myClass');
                   AutoRouter.of(context).push(
@@ -105,12 +101,25 @@ class MyClassBody extends StatelessWidget {
                     ),
                   );
                 },
-                style: const ButtonStyle(
-                    // backgroundColor: AppTheme>().appPrimaryColor,
-                    ),
-                child: const Text("Continuer"),
               ),
-            )
+            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(25),
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       debugPrint('##=======> Ma Série : $myClass');
+            //       AutoRouter.of(context).push(
+            //         MyCoursesRoute(
+            //           myClass: myClass,
+            //         ),
+            //       );
+            //     },
+            //     style: const ButtonStyle(
+            //         // backgroundColor: AppTheme>().appPrimaryColor,
+            //         ),
+            //     child: const Text("Continuer"),
+            //   ),
+            // )
           ],
         ),
       ),

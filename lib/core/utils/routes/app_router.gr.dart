@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CareersRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CareersPage(),
+      );
+    },
     CourseRegisterRoute.name: (routeData) {
       final args = routeData.argsAs<CourseRegisterRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -26,6 +32,12 @@ abstract class _$AppRouter extends RootStackRouter {
           myClass: args.myClass,
           coursesMap: args.coursesMap,
         ),
+      );
+    },
+    CreateProfilRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CreateProfilPage(),
       );
     },
     MyAppRoute.name: (routeData) {
@@ -50,6 +62,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MyProfilsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MyProfilsScreen(),
+      );
+    },
     MyScoresRoute.name: (routeData) {
       final args = routeData.argsAs<MyScoresRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -60,7 +78,27 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    SectorsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SectorsPage(),
+      );
+    },
   };
+}
+
+/// generated route for
+/// [CareersPage]
+class CareersRoute extends PageRouteInfo<void> {
+  const CareersRoute({List<PageRouteInfo>? children})
+      : super(
+          CareersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CareersRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -114,6 +152,20 @@ class CourseRegisterRouteArgs {
   String toString() {
     return 'CourseRegisterRouteArgs{key: $key, courses: $courses, myCourseBloc: $myCourseBloc, myClass: $myClass, coursesMap: $coursesMap}';
   }
+}
+
+/// generated route for
+/// [CreateProfilPage]
+class CreateProfilRoute extends PageRouteInfo<void> {
+  const CreateProfilRoute({List<PageRouteInfo>? children})
+      : super(
+          CreateProfilRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CreateProfilRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -183,6 +235,20 @@ class MyCoursesRouteArgs {
 }
 
 /// generated route for
+/// [MyProfilsScreen]
+class MyProfilsRoute extends PageRouteInfo<void> {
+  const MyProfilsRoute({List<PageRouteInfo>? children})
+      : super(
+          MyProfilsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyProfilsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [MyScoresScreen]
 class MyScoresRoute extends PageRouteInfo<MyScoresRouteArgs> {
   MyScoresRoute({
@@ -218,4 +284,18 @@ class MyScoresRouteArgs {
   String toString() {
     return 'MyScoresRouteArgs{key: $key, result: $result}';
   }
+}
+
+/// generated route for
+/// [SectorsPage]
+class SectorsRoute extends PageRouteInfo<void> {
+  const SectorsRoute({List<PageRouteInfo>? children})
+      : super(
+          SectorsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SectorsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -33,18 +33,38 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
+  flutter_form_builder: ^9.2.1
+  flutter_native_splash: ^2.3.11
   font_awesome_flutter: ^10.5.0
+  form_builder_validators: ^9.1.0
   get_it: ^7.6.0
   injectable: ^2.2.0
 
 dev_dependencies:
   auto_route_generator: ^7.3.1
   build_runner: ^2.4.6
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
   injectable_generator: ^2.4.0
 
+
+# flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/gnac_orientation_icon.jpg"
+
+
+# flutter_native_splash
+flutter_native_splash:
+  color: "#082E81"
+  image: assets/images/icon.png
+
+  android_12:
+    image: assets/images/icon_small.png
+    icon_background_color: "#082E81"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,8 +79,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/file/data.json
-    - assets/file/user_data.json
+    - assets/file/
+    - assets/images/
+    - assets/gnac_orientation_icon.jpg
     # - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

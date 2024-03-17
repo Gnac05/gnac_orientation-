@@ -5,6 +5,9 @@ import 'package:injectable/injectable.dart';
 class AppTheme {
   final Color? appPrimaryColor = Colors.red[800];
   final Color? appSecondaryColor = Colors.blue[900];
+  final Color? red100 = Colors.red[100];
+  final Color? grey = Colors.grey;
+  final Color? greyMedium = Colors.grey.withOpacity(0.4);
   myThemeData(BuildContext context) => 
       ThemeData(
         iconTheme: Theme.of(context).iconTheme.copyWith(
