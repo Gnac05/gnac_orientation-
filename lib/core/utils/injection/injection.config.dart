@@ -15,9 +15,11 @@ import 'package:gnac_orientation/core/styles/app_theme.dart' as _i5;
 import 'package:gnac_orientation/core/utils/constant.dart' as _i3;
 import 'package:gnac_orientation/core/utils/routes/app_router.dart' as _i4;
 import 'package:gnac_orientation/features/career/domain/entity/sector.dart'
-    as _i18;
-import 'package:gnac_orientation/features/career/presentation/widgets/sector_widget.dart'
+    as _i19;
+import 'package:gnac_orientation/features/career/presentation/widgets/sector_body.dart'
     as _i17;
+import 'package:gnac_orientation/features/career/presentation/widgets/sector_widget.dart'
+    as _i18;
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart'
     as _i10;
 import 'package:gnac_orientation/features/my-class/presentation/widget/my_class_body.dart'
@@ -27,9 +29,9 @@ import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course
 import 'package:gnac_orientation/features/my-courses/presentation/my_courses_screen.dart'
     as _i14;
 import 'package:gnac_orientation/features/my-courses/presentation/widget/course_register_body.dart'
-    as _i19;
+    as _i21;
 import 'package:gnac_orientation/features/my-courses/presentation/widget/course_widget.dart'
-    as _i20;
+    as _i22;
 import 'package:gnac_orientation/features/my-courses/presentation/widget/my_courses_body.dart'
     as _i13;
 import 'package:gnac_orientation/features/my-profils/presentation/widgets/create_profil_body.dart'
@@ -38,6 +40,8 @@ import 'package:gnac_orientation/features/my-profils/presentation/widgets/my_pro
     as _i15;
 import 'package:gnac_orientation/features/my-scores/presentation/widgets/my_scores_body.dart'
     as _i16;
+import 'package:gnac_orientation/features/my-scores/presentation/widgets/table_container.dart'
+    as _i20;
 import 'package:gnac_orientation/main.dart' as _i9;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -86,18 +90,25 @@ extension GetItInjectableX on _i1.GetIt {
           key: gh<_i7.Key>(),
           result: gh<Map<String, dynamic>>(),
         ));
-    gh.factory<_i17.SectorWidget>(() => _i17.SectorWidget(
+    gh.factory<_i17.SectorBody>(() => _i17.SectorBody(key: gh<_i7.Key>()));
+    gh.factory<_i18.SectorWidget>(() => _i18.SectorWidget(
           key: gh<_i7.Key>(),
-          sector: gh<_i18.Sector>(),
+          sector: gh<_i19.Sector>(),
         ));
-    gh.factory<_i19.CourseRegisterBody>(() => _i19.CourseRegisterBody(
+    gh.factory<_i20.TableContainer>(() => _i20.TableContainer(
+          key: gh<_i7.Key>(),
+          child: gh<_i7.Widget>(),
+          withColor: gh<bool>(),
+          height: gh<double>(),
+        ));
+    gh.factory<_i21.CourseRegisterBody>(() => _i21.CourseRegisterBody(
           key: gh<_i7.Key>(),
           courses: gh<List<String>>(),
           myCourseBloc: gh<_i12.MyCourseBloc>(),
           myClass: gh<String>(),
           coursesMap: gh<Map<String, dynamic>>(),
         ));
-    gh.factory<_i20.CourseWidget>(() => _i20.CourseWidget(
+    gh.factory<_i22.CourseWidget>(() => _i22.CourseWidget(
           key: gh<_i7.Key>(),
           course: gh<String>(),
           coef: gh<int>(),
