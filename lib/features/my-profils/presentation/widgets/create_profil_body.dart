@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -7,6 +10,7 @@ import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
+import 'package:gnac_orientation/features/my-profils/presentation/bloc/my_profile_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
@@ -18,6 +22,7 @@ class CreateProfilBody extends StatefulWidget {
 }
 
 class _CreateProfilBodyState extends State<CreateProfilBody> {
+  final bloc = MyProfileBloc();
   final _profilKey = GlobalKey<FormBuilderState>();
   @override
   Widget build(BuildContext context) {
@@ -40,9 +45,25 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                     decoration: BoxDecoration(
                         color: AppTheme().red100,
                         borderRadius: BorderRadius.circular(20)),
-                    child: const Icon(
-                      Icons.person,
-                      size: 150,
+                    child: BlocBuilder<MyProfileBloc, MyProfileState>(
+                      bloc: bloc,
+                      builder: (context, state) {
+                        if (state is MyProfileLoading) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (state is PictureReadyState) {
+                          return Image.file(
+                            File(state.picture),
+                            fit: BoxFit.contain,
+                          );
+                        }
+                        return const Icon(
+                          Icons.person,
+                          size: 150,
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -80,7 +101,9 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                                     Column(
                                       children: [
                                         IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            bloc.add(PickImageEvent());
+                                          },
                                           icon: FaIcon(
                                             FontAwesomeIcons.camera,
                                             color: AppTheme().appSecondaryColor,
@@ -99,7 +122,9 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                                     Column(
                                       children: [
                                         IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            bloc.add(TakePictureEvent());
+                                          },
                                           icon: FaIcon(
                                             FontAwesomeIcons.image,
                                             color: AppTheme().appSecondaryColor,
