@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gnac_orientation/features/career/presentation/careers_page.dart';
 import 'package:gnac_orientation/features/career/presentation/sectors_page.dart';
+import 'package:gnac_orientation/features/chat/chat_page.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/course_register_screen.dart';
@@ -59,5 +60,9 @@ class AppRouter extends _$AppRouter {
           page: CareersRoute.page,
           path: CareersPage.routeName,
         ),
+        AutoRoute(
+          page: ChatRoute.page,
+          path: ChatPage.routeName,
+        )
       ];
 }

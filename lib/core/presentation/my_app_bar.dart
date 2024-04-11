@@ -10,11 +10,18 @@ import 'package:injectable/injectable.dart';
 class MyAppBar extends AppBar {
   final BuildContext context;
   final String? text;
+  final Widget? icon;
   final bool enabledPop;
   final bool withIcon;
+  final double? titleFontSize;
 
   MyAppBar(this.context,
-      {this.text, this.enabledPop = false, this.withIcon = false, super.key})
+      {this.text,
+      this.icon,
+      this.titleFontSize,
+      this.enabledPop = false,
+      this.withIcon = false,
+      super.key})
       : super(
           centerTitle: true,
           title: Row(
@@ -28,10 +35,16 @@ class MyAppBar extends AppBar {
                   width: 60,
                 ),
               ),
+              Visibility(
+                visible: icon != null && !withIcon,
+                child: icon ?? const SizedBox(),
+              ),
               Text(
                 text ?? AppConstant().appName,
                 style: TextStyle(
-                    color: AppTheme().appSecondaryColor, fontSize: 20),
+                  color: AppTheme().appSecondaryColor,
+                  fontSize: titleFontSize ?? 20,
+                ),
               ),
             ],
           ),

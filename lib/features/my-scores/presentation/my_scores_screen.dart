@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gnac_orientation/core/presentation/widgets/animate_floating_action_button.dart';
+import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-scores/presentation/widgets/my_scores_body.dart';
 
 @RoutePage()
@@ -17,9 +19,7 @@ class _MyScoresScreenState extends State<MyScoresScreen> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft
-    ]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
   }
 
   @override
@@ -38,6 +38,8 @@ class _MyScoresScreenState extends State<MyScoresScreen> {
         body: MyScoresBody(
           result: widget.result,
         ),
+        floatingActionButton: AnimateFloatingActionButton(
+            onPressed: () => context.pushRoute(const ChatRoute())),
       ),
     );
   }
