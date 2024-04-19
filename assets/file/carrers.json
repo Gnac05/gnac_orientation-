@@ -1,0 +1,1227 @@
+{
+  "A1": {
+    "Lettres et Sciences Humaines": {
+      "FLASH-Adjarra": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "Université d'Abomey-Calavi (UAC)",
+        "Bourse": 74,
+        "Aide": 446,
+        "Matières": ["FRANCAIS", "HIST-GEO", "MATHS"],
+        "Métiers": ["Enseignement", "Recherche", "Aménagement du territoire"]
+      },
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 92,
+        "Aide": 750,
+        "Matières": ["ANGLAIS", "FRANCAIS", "HIST-GEO"],
+        "Métiers": ["Interprétariat", "Tourisme", "Enseignement"]
+      },
+      "FASHS Calavi": {
+        "Ecole/Faculté": "Faculté des Sciences Humaines et Sociales",
+        "Université": "UAC",
+        "Bourse": 44,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "PHILO", "HIST-GEO"],
+        "Métiers": ["Centres sociaux", "Ministères", "Recherche"]
+      },
+      "FLASH (UP)": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "Université de Parakou (UP)",
+        "Bourse": 167,
+        "Aide": 675,
+        "Matières": ["FRANCAIS", "ANGLAIS", "MATHS"],
+        "Métiers": ["Enseignement", "Interprétariat", "Tourisme"]
+      }
+    },
+    "Langues": {
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 14,
+        "Aide": 90,
+        "Matières": ["ALLEMAND", "ANGLAIS", "FRANCAIS"],
+        "Métiers": ["Interprétariat", "Tourisme", "Enseignement"]
+      },
+      "FLASH (UP)": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "UP",
+        "Bourse": 42,
+        "Aide": 300,
+        "Matières": ["FRANCAIS", "PHILO", "ALLEMAND"],
+        "Métiers": ["Enseignement", "Interprétariat", "Tourisme"]
+      }
+    },
+    "Arts et Culture": {
+      "INMAAC": {
+        "Ecole/Faculté": "Institut National des Métiers d'Arts, d'Archéologie et de la Culture",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["FRANCAIS", "HIST-GEO", "PHILO"],
+        "Métiers": ["Arts dramatiques", "Arts Plastiques", "Musique", "Cinéma"]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "HIST-GEO"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "PHILO", "HIST-GEO"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    }
+  },
+
+  "A2": {
+    "Lettres et Sciences Humaines": {
+      "FLASH-Adjarra": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "Université d'Abomey-Calavi (UAC)",
+        "Bourse": 74,
+        "Aide": 446,
+        "Matières": ["FRANCAIS", "HIST-GEO", "MATHS"],
+        "Métiers": ["Enseignement", "Recherche", "Aménagement du territoire"]
+      },
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 92,
+        "Aide": 750,
+        "Matières": ["ANGLAIS", "FRANCAIS", "HIST-GEO"],
+        "Métiers": ["Interprétariat", "Tourisme", "Enseignement"]
+      },
+      "FASHS Calavi": {
+        "Ecole/Faculté": "Faculté des Sciences Humaines et Sociales",
+        "Université": "UAC",
+        "Bourse": 44,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "PHILO", "HIST-GEO"],
+        "Métiers": ["Centres sociaux", "Ministères", "Recherche"]
+      },
+      "FLASH (UP)": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "Université de Parakou (UP)",
+        "Bourse": 167,
+        "Aide": 675,
+        "Matières": ["FRANCAIS", "ANGLAIS", "MATHS"],
+        "Métiers": ["Enseignement", "Interprétariat", "Tourisme"]
+      }
+    },
+    "Langues": {
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 14,
+        "Aide": 90,
+        "Matières": ["ALLEMAND", "ANGLAIS", "FRANCAIS"],
+        "Métiers": ["Interprétariat", "Tourisme", "Enseignement"]
+      },
+      "FLASH (UP)": {
+        "Ecole/Faculté": "Faculté des Lettres, Arts et Sciences Humaines",
+        "Université": "UP",
+        "Bourse": 42,
+        "Aide": 300,
+        "Matières": ["FRANCAIS", "PHILO", "ALLEMAND"],
+        "Métiers": ["Enseignement", "Interprétariat", "Tourisme"]
+      }
+    },
+    "Arts et Culture": {
+      "INMAAC": {
+        "Ecole/Faculté": "Institut National des Métiers d'Arts, d'Archéologie et de la Culture",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["FRANCAIS", "HIST-GEO", "PHILO"],
+        "Métiers": ["Arts dramatiques", "Arts Plastiques", "Musique", "Cinéma"]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "HIST-GEO"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "PHILO", "HIST-GEO"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    }
+  },
+
+  "B": {
+    "Sciences Economiques et de Gestion": {
+      "FASEG": {
+        "Ecole/Faculté": "Faculté des Sciences Economiques et de Gestion",
+        "Université": "UAC",
+        "Bourse": 225,
+        "Aide": 1740,
+        "Matières": ["MATHS", "ECONIMIE", "FRANCAIS"],
+        "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
+      },
+      "FASEG (UP)": {
+        "Ecole/Faculté": "Faculté de Sciences Economiques et de Gestion",
+        "Université": "UP",
+        "Bourse": 26,
+        "Aide": 60,
+        "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Analyse et Politique Economiques",
+          "Economie Agricole",
+          "Economie et Finance des Collectivités Locales",
+          "Economie et Finance Internationales"
+        ]
+      }
+    },
+    "Gestion": {
+      "ENEAM": {
+        "Ecole/Faculté": "Ecole Nationale d'Economie Appliquée et de Management",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+        "Métiers": ["Marketing", "Gestion des Ressources Humaines"]
+      },
+      "IUT (UP)": {
+        "Ecole/Faculté": "Institut Universitaire de Technologie",
+        "Université": "UP",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["MATHS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Gestion Commerciale",
+          "Gestion des Transports et Logistiques",
+          "Gestion des Ressources Humaines"
+        ]
+      }
+    },
+    "Commerce International": {
+      "HERCI": {
+        "Ecole/Faculté": "Haute Ecole Réginale de Commerce International",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["MATHS", "ANGLAIS", "ECONIMIE"],
+        "Métiers": [
+          "Négoce International",
+          "Gestion des Relations Maritimes Internationales",
+          "Commerce International"
+        ]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "HIST-GEO"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "PHILO", "HIST-GEO"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    }
+  },
+
+  "C": {
+    "Sciences et Technologies": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 74,
+        "Aide": 300,
+        "Matières": ["SVT", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Sciences de la Vie et de la Terre",
+          "Physique-Chimie",
+          "Mathématiques Informatique et Applications"
+        ]
+      },
+      "FAST Natitingou": {
+        "Ecole/Faculté": "Faculté des Sciences et Techniques",
+        "Université": "UNSTIM",
+        "Bourse": 105,
+        "Aide": 75,
+        "Matières": ["ANGLAIS", "PCT", "MATHS"],
+        "Métiers": ["Mathématiques Informatiques", "Physique Chimie"]
+      }
+    },
+    "Santé": {
+      "FSS": {
+        "Ecole/Faculté": "Faculté des Sciences de la Santé",
+        "Université": "UAC",
+        "Bourse": 150,
+        "Aide": 10,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": ["Médecine Générale", "Pharmacie", "Kinésithérapie"]
+      },
+      "FM (UP)": {
+        "Ecole/Faculté": "Faculté de Médecine",
+        "Université": "UP",
+        "Bourse": 120,
+        "Aide": 33,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": ["Médecine Humaine"]
+      }
+    },
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Agronomie": {
+      "FSA": {
+        "Ecole/Faculté": "Faculté des Sciences Agronomiques",
+        "Université": "UAC",
+        "Bourse": 14,
+        "Aide": 3,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": [
+          "Sciecnes et Techniques de Production Végétale",
+          "Sceinces et Techniques de Production Animale",
+          "Aménagement et Gestion des Forêts et Parcours Naturels"
+        ]
+      },
+      "FA (UP)": {
+        "Ecole/Faculté": "Faculté d'Agronomie",
+        "Université": "UP",
+        "Bourse": 22,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": [
+          "Sciences et Techniques de Production Végétale",
+          "Sciences et Techniques de Production Animale et Halieutique",
+          "Aménagement et Gestion des Ressources Naturelles"
+        ]
+      },
+      "UNA": {
+        "Université": "Université Nationale d'Agriculture",
+        "Ecoles": [
+          "EAq (Ecole d'Aquaculture)",
+          "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
+          "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
+          "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
+          "Ecole de Génie Rural (EGR)",
+          "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
+          "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
+          "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
+          "Ecole de Foresterie Tropicale"
+        ]
+      }
+    },
+    "Informatique": {
+      "IFRI": {
+        "Ecole/Faculté": "Institut de Formation et de Recherche en Informatique",
+        "Université": "UAC",
+        "Bourse": 17,
+        "Aide": 7,
+        "Matières": ["MATHS", "ANGLAIS", "FRANCAIS"],
+        "Métiers": [
+          "Génie Logiciel",
+          "Internet et Multimédia",
+          "Intelligence Artificielle",
+          "Systèmes embarqués et Internet des Objets",
+          "Sécurité Informatique"
+        ]
+      }
+    }
+  },
+
+  "D": {
+    "Sciences et Technologies": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 74,
+        "Aide": 300,
+        "Matières": ["SVT", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Sciences de la Vie et de la Terre",
+          "Physique-Chimie",
+          "Mathématiques Informatique et Applications"
+        ]
+      },
+      "FAST Natitingou": {
+        "Ecole/Faculté": "Faculté des Sciences et Techniques",
+        "Université": "UNSTIM",
+        "Bourse": 105,
+        "Aide": 75,
+        "Matières": ["ANGLAIS", "PCT", "MATHS"],
+        "Métiers": ["Mathématiques Informatiques", "Physique Chimie"]
+      }
+    },
+    "Santé": {
+      "FSS": {
+        "Ecole/Faculté": "Faculté des Sciences de la Santé",
+        "Université": "UAC",
+        "Bourse": 150,
+        "Aide": 10,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": ["Médecine Générale", "Pharmacie", "Kinésithérapie"]
+      },
+      "FM (UP)": {
+        "Ecole/Faculté": "Faculté de Médecine",
+        "Université": "UP",
+        "Bourse": 120,
+        "Aide": 33,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": ["Médecine Humaine"]
+      }
+    },
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Agronomie": {
+      "FSA": {
+        "Ecole/Faculté": "Faculté des Sciences Agronomiques",
+        "Université": "UAC",
+        "Bourse": 14,
+        "Aide": 3,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": [
+          "Sciecnes et Techniques de Production Végétale",
+          "Sceinces et Techniques de Production Animale",
+          "Aménagement et Gestion des Forêts et Parcours Naturels"
+        ]
+      },
+      "FA (UP)": {
+        "Ecole/Faculté": "Faculté d'Agronomie",
+        "Université": "UP",
+        "Bourse": 22,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "SVT"],
+        "Métiers": [
+          "Sciences et Techniques de Production Végétale",
+          "Sciences et Techniques de Production Animale et Halieutique",
+          "Aménagement et Gestion des Ressources Naturelles"
+        ]
+      },
+      "UNA": {
+        "Université": "Université Nationale d'Agriculture",
+        "Ecoles": [
+          "EAq (Ecole d'Aquaculture)",
+          "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
+          "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
+          "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
+          "Ecole de Génie Rural (EGR)",
+          "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
+          "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
+          "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
+          "Ecole de Foresterie Tropicale"
+        ]
+      }
+    },
+    "Informatique": {
+      "IFRI": {
+        "Ecole/Faculté": "Institut de Formation et de Recherche en Informatique",
+        "Université": "UAC",
+        "Bourse": 17,
+        "Aide": 7,
+        "Matières": ["MATHS", "ANGLAIS", "FRANCAIS"],
+        "Métiers": [
+          "Génie Logiciel",
+          "Internet et Multimédia",
+          "Intelligence Artificielle",
+          "Systèmes embarqués et Internet des Objets",
+          "Sécurité Informatique"
+        ]
+      }
+    }
+  },
+
+  "E": {
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Mécanique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 23,
+        "Aide": 5,
+        "Matières": ["MATHS", "CONSTRUCTION MECANIQUE"],
+        "Métiers": [
+          "Maintenance des Systèmes (Maintenance Industrielle)",
+          "Maintenance des Systèmes (Maintenance Automobile)",
+          "Génie Mécanique et productique"
+        ]
+      }
+    },
+    "Energies Renouvelables": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": ["Energies Renouvelables et Systèmes Energétiques"]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 38,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Energétique (Energies Renouvelables et Systèmes Energétiques)"
+        ]
+      }
+    },
+    "Electrotechnique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 30,
+        "Aide": 6,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Electrique et Informatique (Ellectronique et Electrotechnique)"
+        ]
+      }
+    }
+  },
+
+  "F1": {
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Mécanique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 23,
+        "Aide": 5,
+        "Matières": ["MATHS", "CONSTRUCTION MECANIQUE"],
+        "Métiers": [
+          "Maintenance des Systèmes (Maintenance Industrielle)",
+          "Maintenance des Systèmes (Maintenance Automobile)",
+          "Génie Mécanique et productique"
+        ]
+      }
+    },
+    "Energies Renouvelables": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": ["Energies Renouvelables et Systèmes Energétiques"]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 38,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Energétique (Energies Renouvelables et Systèmes Energétiques)"
+        ]
+      }
+    },
+    "Electrotechnique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 30,
+        "Aide": 6,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Electrique et Informatique (Ellectronique et Electrotechnique)"
+        ]
+      }
+    }
+  },
+
+  "F2": {
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Mécanique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 23,
+        "Aide": 5,
+        "Matières": ["MATHS", "CONSTRUCTION MECANIQUE"],
+        "Métiers": [
+          "Maintenance des Systèmes (Maintenance Industrielle)",
+          "Maintenance des Systèmes (Maintenance Automobile)",
+          "Génie Mécanique et productique"
+        ]
+      }
+    },
+    "Energies Renouvelables": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": ["Energies Renouvelables et Systèmes Energétiques"]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 38,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Energétique (Energies Renouvelables et Systèmes Energétiques)"
+        ]
+      }
+    },
+    "Electrotechnique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 30,
+        "Aide": 6,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Electrique et Informatique (Ellectronique et Electrotechnique)"
+        ]
+      }
+    }
+  },
+
+  "F3": {
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Mécanique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 23,
+        "Aide": 5,
+        "Matières": ["MATHS", "CONSTRUCTION MECANIQUE"],
+        "Métiers": [
+          "Maintenance des Systèmes (Maintenance Industrielle)",
+          "Maintenance des Systèmes (Maintenance Automobile)",
+          "Génie Mécanique et productique"
+        ]
+      }
+    },
+    "Energies Renouvelables": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": ["Energies Renouvelables et Systèmes Energétiques"]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 38,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Energétique (Energies Renouvelables et Systèmes Energétiques)"
+        ]
+      }
+    },
+    "Electrotechnique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 30,
+        "Aide": 6,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Electrique et Informatique (Ellectronique et Electrotechnique)"
+        ]
+      }
+    }
+  },
+
+  "F4": {
+    "Génie": {
+      "EPAC": {
+        "Ecole/Faculté": "Ecole Polytechnique d'Abomey-Calavi",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 7,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Electrique",
+          "Génie Mécanique et Energétique",
+          "Génie Informatique et Télécom",
+          "Génie Chimique procédés"
+        ]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 76,
+        "Aide": 12,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Energétique",
+          "Génie Electrique et Informatique",
+          "Génie Mécanique et productique"
+        ]
+      },
+      "ENSTP": {
+        "Ecole/Faculté": "Ecole Nationale Supérieure des Travaux Publics",
+        "Université": "UNSTIM",
+        "Bourse": 24,
+        "Aide": 4,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
+          "Hydraulique et Assainissement"
+        ]
+      }
+    },
+    "Mécanique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 23,
+        "Aide": 5,
+        "Matières": ["MATHS", "CONSTRUCTION MECANIQUE"],
+        "Métiers": [
+          "Maintenance des Systèmes (Maintenance Industrielle)",
+          "Maintenance des Systèmes (Maintenance Automobile)",
+          "Génie Mécanique et productique"
+        ]
+      }
+    },
+    "Energies Renouvelables": {
+      "FAST": {
+        "Ecole/Faculté": "Faculté des Sciences Techniques",
+        "Université": "UAC",
+        "Bourse": 28,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "FRANCAIS"],
+        "Métiers": ["Energies Renouvelables et Systèmes Energétiques"]
+      },
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 38,
+        "Aide": 6,
+        "Matières": ["MATHS", "PCT", "ANGLAIS"],
+        "Métiers": [
+          "Génie Energétique (Energies Renouvelables et Systèmes Energétiques)"
+        ]
+      }
+    },
+    "Electrotechnique": {
+      "INSTI": {
+        "Ecole/Faculté": "Institut National Supérieur de Technologie Industrielle",
+        "Université": "UNSTIM",
+        "Bourse": 30,
+        "Aide": 6,
+        "Matières": ["MATHS", "ANGLAIS", "PCT"],
+        "Métiers": [
+          "Génie Electrique et Informatique (Ellectronique et Electrotechnique)"
+        ]
+      }
+    }
+  },
+
+  "G1": {
+    "Gestion": {
+      "ENEAM": {
+        "Ecole/Faculté": "Ecole Nationale d'Economie Appliquée et de Management",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Assurance",
+          "Banque et Finance de Marché",
+          "Banque et Institutions des Micro finances",
+          "Marketing",
+          "Gestion des Ressources Humaines",
+          "Gestion des Transports",
+          "Gestion de Logistique",
+          "Gestion Financière et Comptable"
+        ]
+      },
+      "IUT (UP)": {
+        "Ecole/Faculté": "Institut Universitaire de Technologie",
+        "Université": "UP",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": ["Gestion Commerciale", "Gestion des Ressources Humaines"]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "ETUDE DE CAS"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "ETUDE DE CAS", "ANGLAIS"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    },
+    "Sciences Economiques et de Gestion": {
+      "FASEG": {
+        "Ecole/Faculté": "Faculté des Sciences Economiques et de Gestion",
+        "Université": "UAC",
+        "Bourse": 225,
+        "Aide": 1740,
+        "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+        "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
+      },
+      "FASEG (UP)": {
+        "Ecole/Faculté": "Faculté de Sciences Economiques et de Gestion",
+        "Université": "UP",
+        "Bourse": 26,
+        "Aide": 60,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Analyse et Politique Economiques",
+          "Economie Agricole",
+          "Economie et Finance des Collectivités Locales",
+          "Economie et Finance Internationales"
+        ]
+      }
+    },
+    "Communication": {
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 92,
+        "Aide": 375,
+        "Matières": ["ANGLAIS", "FRANCAIS", "ETUDE DE CAS"],
+        "Métiers": ["Sciences du Langage et de la Communication"]
+      }
+    }
+  },
+
+  "G2": {
+    "Gestion": {
+      "ENEAM": {
+        "Ecole/Faculté": "Ecole Nationale d'Economie Appliquée et de Management",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Assurance",
+          "Banque et Finance de Marché",
+          "Banque et Institutions des Micro finances",
+          "Marketing",
+          "Gestion des Ressources Humaines",
+          "Gestion des Transports",
+          "Gestion de Logistique",
+          "Gestion Financière et Comptable"
+        ]
+      },
+      "IUT (UP)": {
+        "Ecole/Faculté": "Institut Universitaire de Technologie",
+        "Université": "UP",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": ["Gestion Commerciale", "Gestion des Ressources Humaines"]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "ETUDE DE CAS"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "ETUDE DE CAS", "ANGLAIS"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    },
+    "Sciences Economiques et de Gestion": {
+      "FASEG": {
+        "Ecole/Faculté": "Faculté des Sciences Economiques et de Gestion",
+        "Université": "UAC",
+        "Bourse": 225,
+        "Aide": 1740,
+        "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+        "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
+      },
+      "FASEG (UP)": {
+        "Ecole/Faculté": "Faculté de Sciences Economiques et de Gestion",
+        "Université": "UP",
+        "Bourse": 26,
+        "Aide": 60,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Analyse et Politique Economiques",
+          "Economie Agricole",
+          "Economie et Finance des Collectivités Locales",
+          "Economie et Finance Internationales"
+        ]
+      }
+    },
+    "Communication": {
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 92,
+        "Aide": 375,
+        "Matières": ["ANGLAIS", "FRANCAIS", "ETUDE DE CAS"],
+        "Métiers": ["Sciences du Langage et de la Communication"]
+      }
+    }
+  },
+
+  "G3": {
+    "Gestion": {
+      "ENEAM": {
+        "Ecole/Faculté": "Ecole Nationale d'Economie Appliquée et de Management",
+        "Université": "UAC",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Assurance",
+          "Banque et Finance de Marché",
+          "Banque et Institutions des Micro finances",
+          "Marketing",
+          "Gestion des Ressources Humaines",
+          "Gestion des Transports",
+          "Gestion de Logistique",
+          "Gestion Financière et Comptable"
+        ]
+      },
+      "IUT (UP)": {
+        "Ecole/Faculté": "Institut Universitaire de Technologie",
+        "Université": "UP",
+        "Bourse": 9,
+        "Aide": 3,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": ["Gestion Commerciale", "Gestion des Ressources Humaines"]
+      }
+    },
+    "Droit et Sciences Politiques": {
+      "FADESP": {
+        "Ecole/Faculté": "Faculté de Droit et de Science Politique",
+        "Université": "UAC",
+        "Bourse": 120,
+        "Aide": 1200,
+        "Matières": ["FRANCAIS", "ANGLAIS", "ETUDE DE CAS"],
+        "Métiers": ["Droit", "Sciences Politiques"]
+      },
+      "FDSP (UP)": {
+        "Ecole/Faculté": "Faculté de Droit et Sciences Politiques",
+        "Université": "UP",
+        "Bourse": 111,
+        "Aide": 750,
+        "Matières": ["FRANCAIS", "ETUDE DE CAS", "ANGLAIS"],
+        "Métiers": ["Droit Privé", "Droit Public", "Sciences Politiques"]
+      }
+    },
+    "Sciences Economiques et de Gestion": {
+      "FASEG": {
+        "Ecole/Faculté": "Faculté des Sciences Economiques et de Gestion",
+        "Université": "UAC",
+        "Bourse": 225,
+        "Aide": 1740,
+        "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+        "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
+      },
+      "FASEG (UP)": {
+        "Ecole/Faculté": "Faculté de Sciences Economiques et de Gestion",
+        "Université": "UP",
+        "Bourse": 26,
+        "Aide": 60,
+        "Matières": ["ETUDE DE CAS", "FRANCAIS", "ANGLAIS"],
+        "Métiers": [
+          "Analyse et Politique Economiques",
+          "Economie Agricole",
+          "Economie et Finance des Collectivités Locales",
+          "Economie et Finance Internationales"
+        ]
+      }
+    },
+    "Communication": {
+      "FLLAC": {
+        "Ecole/Faculté": "Faculté des lettres, langues, Arts et Communication",
+        "Université": "UAC",
+        "Bourse": 92,
+        "Aide": 375,
+        "Matières": ["ANGLAIS", "FRANCAIS", "ETUDE DE CAS"],
+        "Métiers": ["Sciences du Langage et de la Communication"]
+      }
+    }
+  }
+}
