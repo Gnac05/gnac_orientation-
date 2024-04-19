@@ -24,6 +24,7 @@ class CreateProfilBody extends StatefulWidget {
 class _CreateProfilBodyState extends State<CreateProfilBody> {
   final bloc = MyProfileBloc();
   final _profilKey = GlobalKey<FormBuilderState>();
+  String? picture;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -40,30 +41,45 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
             child: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 20, right: 20),
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
                   child: Container(
+                    height: 200,
+                    width: 200,
                     decoration: BoxDecoration(
-                        color: AppTheme().red100,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: BlocBuilder<MyProfileBloc, MyProfileState>(
-                      bloc: bloc,
-                      builder: (context, state) {
-                        if (state is MyProfileLoading) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppTheme().red100,
+                    ),
+                    child: Center(
+                      child: BlocBuilder<MyProfileBloc, MyProfileState>(
+                        bloc: bloc,
+                        builder: (context, state) {
+                          if (state is MyProfileLoading) {
+                            
+                            return const CircularProgressIndicator();
+                          }
+                          if (state is PictureReadyState) {
+                            picture = state.picture;
+                            return Container(
+                              decoration: BoxDecoration(
+                                color: AppTheme().appPrimaryColor,
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: Image.file(
+                                    File(state.picture),
+                                  ).image,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            );
+                          }
+                          return const Icon(
+                            Icons.person,
+                            size: 150,
                           );
-                        }
-                        if (state is PictureReadyState) {
-                          return Image.file(
-                            File(state.picture),
-                            fit: BoxFit.contain,
-                          );
-                        }
-                        return const Icon(
-                          Icons.person,
-                          size: 150,
-                        );
-                      },
+                        },
+                      ),
                     ),
                   ),
                 ),
@@ -239,6 +255,7 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
             child: NextButtonWidget(
               onPressed: () {
                 if (_profilKey.currentState!.saveAndValidate()) {
+                  debugPrint('Picture with : $picture END');
                   debugPrint('Validate with : ');
                   debugPrint(
                       '"pseudo": ${_profilKey.currentState!.value['pseudo']},\n "name": ${_profilKey.currentState!.value['name']}, \n "firstName": ${_profilKey.currentState!.value['firstName']},');
