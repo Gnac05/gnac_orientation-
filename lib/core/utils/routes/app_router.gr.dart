@@ -16,9 +16,13 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     CareersRoute.name: (routeData) {
+      final args = routeData.argsAs<CareersRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const CareersPage(),
+        child: CareersPage(
+          key: args.key,
+          myClass: args.myClass,
+        ),
       );
     },
     ChatRoute.name: (routeData) {
@@ -95,16 +99,40 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [CareersPage]
-class CareersRoute extends PageRouteInfo<void> {
-  const CareersRoute({List<PageRouteInfo>? children})
-      : super(
+class CareersRoute extends PageRouteInfo<CareersRouteArgs> {
+  CareersRoute({
+    Key? key,
+    required String myClass,
+    List<PageRouteInfo>? children,
+  }) : super(
           CareersRoute.name,
+          args: CareersRouteArgs(
+            key: key,
+            myClass: myClass,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'CareersRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<CareersRouteArgs> page =
+      PageInfo<CareersRouteArgs>(name);
+}
+
+class CareersRouteArgs {
+  const CareersRouteArgs({
+    this.key,
+    required this.myClass,
+  });
+
+  final Key? key;
+
+  final String myClass;
+
+  @override
+  String toString() {
+    return 'CareersRouteArgs{key: $key, myClass: $myClass}';
+  }
 }
 
 /// generated route for

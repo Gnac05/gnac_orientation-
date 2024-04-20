@@ -8,8 +8,8 @@ import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 
 class CareersBody extends StatefulWidget {
-  const CareersBody({super.key});
-
+  const CareersBody({super.key, required this.carrerList});
+  final List<String> carrerList;
   @override
   State<CareersBody> createState() => _CareersBodyState();
 }
@@ -31,14 +31,14 @@ class _CareersBodyState extends State<CareersBody> {
             key: _careersKey,
             child: Column(
               children: [
-                FormBuilderCheckboxGroup<int>(
+                FormBuilderCheckboxGroup<String>(
                   name: "careers",
                   options: List.generate(
-                    10,
+                    widget.carrerList.length,
                     (index) => FormBuilderFieldOption(
-                      value: index,
+                      value: widget.carrerList[index],
                       child: Text(
-                        "Carrière possible ${index + 1}",
+                        widget.carrerList[index],
                         style: const TextStyle(fontSize: 16),
                       ),
                     ),

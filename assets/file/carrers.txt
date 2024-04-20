@@ -1,0 +1,33 @@
+// A1 and A2
+Lettres et Sciences Humaines,
+Langues,
+Arts et Culture,
+Droit et Sciences Politiques,
+
+// B
+Sciences Economiques et de Gestion,
+Gestion,
+Commerce International,
+// DSP
+
+// C and D
+Sciences et Technologies
+Santé,
+Génie,
+Agronomie,
+Informatique,
+
+// E
+Génie,
+Mécanique,
+Energies Renouvelables,
+Electrotechnique,
+
+// G2 and G3
+Gestion,
+Droit et Sciences Politiques,
+Sciences Economiques et de Gestion,
+Communication,
+
+
+

@@ -29,11 +29,11 @@ class MyCoursesBody extends StatefulWidget {
 
 class _MyCoursesBodyState extends State<MyCoursesBody> {
   final _notesKey = GlobalKey<FormBuilderState>();
-    List<Widget> myChildren = [];
-     @override
+  List<Widget> myChildren = [];
+  @override
   Widget build(BuildContext context) {
     debugPrint("coursesMap: ${widget.coursesMap}");
-    if( widget.coursesMap != {} && widget.coursesMap['Error'] != 'Message') {
+    if (widget.coursesMap != {} && widget.coursesMap['Error'] != 'Message') {
       widget.coursesMap.forEach((key, value) {
         myChildren.add(Row(
           children: [
@@ -134,6 +134,9 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                           color: AppTheme().greyMedium!,
                         ),
                       ),
+                      contentPadding: const EdgeInsets.only(
+                        left: 16,
+                      ),
                     ),
                   ),
                 ),
@@ -153,7 +156,7 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
             );
       });
     }
- 
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
@@ -221,10 +224,17 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                 onPressed: () {
                   if (_notesKey.currentState!.saveAndValidate()) {
                     widget.coursesMap.forEach((key, value) {
-                      widget.coursesMap[key]["Note"] = int.parse(_notesKey.currentState!.value[key].toString());
-                     });
-                     debugPrint(widget.coursesMap.toString());
-                     AutoRouter.of(context).push(const CareersRoute());
+                      widget.coursesMap[key]["Note"] = double.parse(
+                          _notesKey.currentState!.value[key].toString());
+                    });
+                    debugPrint(
+                      widget.coursesMap.toString(),
+                    );
+                    AutoRouter.of(context).push(
+                      CareersRoute(
+                        myClass: widget.myClass,
+                      ),
+                    );
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
                   }
                 },

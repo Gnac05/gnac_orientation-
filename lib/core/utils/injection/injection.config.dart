@@ -15,11 +15,11 @@ import 'package:gnac_orientation/core/styles/app_theme.dart' as _i5;
 import 'package:gnac_orientation/core/utils/constant.dart' as _i3;
 import 'package:gnac_orientation/core/utils/routes/app_router.dart' as _i4;
 import 'package:gnac_orientation/features/career/domain/entity/sector.dart'
-    as _i20;
+    as _i21;
 import 'package:gnac_orientation/features/career/presentation/widgets/sector_body.dart'
-    as _i18;
-import 'package:gnac_orientation/features/career/presentation/widgets/sector_widget.dart'
     as _i19;
+import 'package:gnac_orientation/features/career/presentation/widgets/sector_widget.dart'
+    as _i20;
 import 'package:gnac_orientation/features/chat/widgets/chat_body.dart' as _i6;
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart'
     as _i11;
@@ -30,19 +30,21 @@ import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course
 import 'package:gnac_orientation/features/my-courses/presentation/my_courses_screen.dart'
     as _i15;
 import 'package:gnac_orientation/features/my-courses/presentation/widget/course_register_body.dart'
-    as _i22;
-import 'package:gnac_orientation/features/my-courses/presentation/widget/course_widget.dart'
     as _i23;
+import 'package:gnac_orientation/features/my-courses/presentation/widget/course_widget.dart'
+    as _i24;
 import 'package:gnac_orientation/features/my-courses/presentation/widget/my_courses_body.dart'
     as _i14;
+import 'package:gnac_orientation/features/my-profils/presentation/bloc/my_profile_bloc.dart'
+    as _i16;
 import 'package:gnac_orientation/features/my-profils/presentation/widgets/create_profil_body.dart'
     as _i8;
 import 'package:gnac_orientation/features/my-profils/presentation/widgets/my_profils_body.dart'
-    as _i16;
-import 'package:gnac_orientation/features/my-scores/presentation/widgets/my_scores_body.dart'
     as _i17;
+import 'package:gnac_orientation/features/my-scores/presentation/widgets/my_scores_body.dart'
+    as _i18;
 import 'package:gnac_orientation/features/my-scores/presentation/widgets/table_container.dart'
-    as _i21;
+    as _i22;
 import 'package:gnac_orientation/main.dart' as _i10;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -67,6 +69,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i7.BuildContext>(),
           text: gh<String>(),
           icon: gh<_i7.Widget>(),
+          titleFontSize: gh<double>(),
           enabledPop: gh<bool>(),
           withIcon: gh<bool>(),
           key: gh<_i7.Key>(),
@@ -87,31 +90,32 @@ extension GetItInjectableX on _i1.GetIt {
           key: gh<_i7.Key>(),
           myClass: gh<String>(),
         ));
-    gh.factory<_i16.MyProfilsBody>(
-        () => _i16.MyProfilsBody(key: gh<_i7.Key>()));
-    gh.factory<_i17.MyScoresBody>(() => _i17.MyScoresBody(
+    gh.factory<_i16.MyProfileBloc>(() => _i16.MyProfileBloc());
+    gh.factory<_i17.MyProfilsBody>(
+        () => _i17.MyProfilsBody(key: gh<_i7.Key>()));
+    gh.factory<_i18.MyScoresBody>(() => _i18.MyScoresBody(
           key: gh<_i7.Key>(),
           result: gh<Map<String, dynamic>>(),
         ));
-    gh.factory<_i18.SectorBody>(() => _i18.SectorBody(key: gh<_i7.Key>()));
-    gh.factory<_i19.SectorWidget>(() => _i19.SectorWidget(
+    gh.factory<_i19.SectorBody>(() => _i19.SectorBody(key: gh<_i7.Key>()));
+    gh.factory<_i20.SectorWidget>(() => _i20.SectorWidget(
           key: gh<_i7.Key>(),
-          sector: gh<_i20.Sector>(),
+          sector: gh<_i21.Sector>(),
         ));
-    gh.factory<_i21.TableContainer>(() => _i21.TableContainer(
+    gh.factory<_i22.TableContainer>(() => _i22.TableContainer(
           key: gh<_i7.Key>(),
           child: gh<_i7.Widget>(),
           withColor: gh<bool>(),
           height: gh<double>(),
         ));
-    gh.factory<_i22.CourseRegisterBody>(() => _i22.CourseRegisterBody(
+    gh.factory<_i23.CourseRegisterBody>(() => _i23.CourseRegisterBody(
           key: gh<_i7.Key>(),
           courses: gh<List<String>>(),
           myCourseBloc: gh<_i13.MyCourseBloc>(),
           myClass: gh<String>(),
           coursesMap: gh<Map<String, dynamic>>(),
         ));
-    gh.factory<_i23.CourseWidget>(() => _i23.CourseWidget(
+    gh.factory<_i24.CourseWidget>(() => _i24.CourseWidget(
           key: gh<_i7.Key>(),
           course: gh<String>(),
           coef: gh<int>(),

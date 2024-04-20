@@ -12,6 +12,7 @@ class AnimateFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: "afab",
       onPressed: onPressed,
       child: const FaIcon(FontAwesomeIcons.brain)
           .animate(
