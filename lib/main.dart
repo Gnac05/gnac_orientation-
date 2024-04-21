@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/injection/injection.dart';
@@ -7,8 +8,9 @@ import 'package:injectable/injectable.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
   await getIt.reset();
+  configureDependencies(); 
+   await dotenv.load(fileName: ".env");
   runApp(const MyAppScreen());
 }
 
@@ -25,8 +27,9 @@ class MyAppScreen extends StatelessWidget {
       title: 'Gnac Orientation',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().myThemeData(context),
-      routerDelegate: appRouter.delegate(),
-      routeInformationParser: appRouter.defaultRouteParser(),
+      routerConfig: appRouter.config(),
+      // routerDelegate: appRouter.delegate(),
+      // routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

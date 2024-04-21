@@ -16,6 +16,7 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         context,
+        enabledPop: true,
         text: 'Gnac Orientation AI Chat',
         titleFontSize: 17,
         icon: Padding(

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gnac_orientation/features/career/presentation/careers_page.dart';
 import 'package:gnac_orientation/features/career/presentation/sectors_page.dart';
-import 'package:gnac_orientation/features/chat/chat_page.dart';
+import 'package:gnac_orientation/features/chat/presentation/chat_page.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/course_register_screen.dart';
@@ -24,7 +24,7 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          initial: true,
+          // initial: true,
           page: MyProfilsRoute.page,
           path: MyProfilsScreen.routeName,
         ),
@@ -53,6 +53,7 @@ class AppRouter extends _$AppRouter {
           path: CreateProfilPage.routeName,
         ),
         AutoRoute(
+          initial: true,
           page: SectorsRoute.page,
           path: SectorsPage.routeName,
         ),
