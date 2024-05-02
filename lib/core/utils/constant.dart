@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:injectable/injectable.dart';
 
 // final AppConstant appConstant =  AppConstant();
@@ -6,6 +7,15 @@ import 'package:injectable/injectable.dart';
 @lazySingleton
 class AppConstant {
   final appName = "Gnac Orientation";
+
+  static const firebaseOptions =  FirebaseOptions(
+    apiKey: "AIzaSyDXoCR5qtukFoZew4j8RTxhRV3o4f67Fvk",
+    authDomain: "gnacorientation-2023.firebaseapp.com",
+    projectId: "gnacorientation-2023",
+    storageBucket: "gnacorientation-2023.appspot.com",
+    messagingSenderId: "106710983727",
+    appId: "1:106710983727:web:21d740d62548e5349492da",
+  );
 
   // final MyCourseBloc myCourseBloc = MyCourseBloc();
 
@@ -7899,5 +7909,4 @@ class AppConstant {
     "DEAT": {},
     "DT/STI": {}
   };
-
 }
