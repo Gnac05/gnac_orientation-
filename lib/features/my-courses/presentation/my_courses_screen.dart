@@ -18,39 +18,70 @@ class MyCoursesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final  myCourseBloc = MyCourseBloc();
+    final myCourseBloc = MyCourseBloc();
     return BlocBuilder<MyCourseBloc, MyCourseState>(
       bloc: myCourseBloc,
       builder: (context, state) {
         if (state is MyCourseLoading) {
-          return Center(
-            child: CircularProgressIndicator(color: AppTheme().appPrimaryColor, backgroundColor: AppTheme().appSecondaryColor),
+          return Scaffold(
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Veuillez patienter, vos résultats sont en cours de chargement...\nCelà peut prendre une à 5 minutes.",
+                    style: TextStyle(
+                        color: AppTheme().appPrimaryColor, fontSize: 15),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircularProgressIndicator(
+                        color: AppTheme().appPrimaryColor,
+                        backgroundColor: AppTheme().appSecondaryColor),
+                  ),
+                ],
+              ),
+            ),
           );
         }
-        if (state is MyCoursesResults){
+        if (state is MyCoursesResults) {
           AutoRouter.of(context).push(MyScoresRoute(result: state.results));
         }
-              final courses = (state is MyCourseInitial)? state.courses : (state is MyCoursesReady)? state.courses : AppConstant().courseList;
-        final coursesMap = (state is MyCourseInitial)? state.coursesMap : (state is MyCoursesReady)? state.coursesMap : {'Error': 'Message'};
+        final courses = (state is MyCourseInitial)
+            ? state.courses
+            : (state is MyCoursesReady)
+                ? state.courses
+                : AppConstant().courseList;
+        final coursesMap = (state is MyCourseInitial)
+            ? state.coursesMap
+            : (state is MyCoursesReady)
+                ? state.coursesMap
+                : {'Error': 'Message'};
         return Scaffold(
           appBar: MyAppBar(context, enabledPop: true),
-          body:  MyCoursesBody(
-            coursesMap: coursesMap,
-            courses: courses,
-            myClass: myClass,
-            myCourseBloc: myCourseBloc,
+          body: Center(
+            child: MyCoursesBody(
+              coursesMap: coursesMap,
+              courses: courses,
+              myClass: myClass,
+              myCourseBloc: myCourseBloc,
+            ),
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: (state is MyCourseLoading)? null : () {
-              myCourseBloc.add(AddCourse());
-              AutoRouter.of(context).push(
-                CourseRegisterRoute(
-                    courses: courses,
-                    myCourseBloc: myCourseBloc,
-                    myClass: myClass,
-                    coursesMap:coursesMap, ),
-              );
-            },
+            onPressed: (state is MyCourseLoading)
+                ? null
+                : () {
+                    myCourseBloc.add(AddCourse());
+                    AutoRouter.of(context).push(
+                      CourseRegisterRoute(
+                        courses: courses,
+                        myCourseBloc: myCourseBloc,
+                        myClass: myClass,
+                        coursesMap: coursesMap,
+                      ),
+                    );
+                  },
             child: const FaIcon(FontAwesomeIcons.plus, size: 25),
           ),
         );

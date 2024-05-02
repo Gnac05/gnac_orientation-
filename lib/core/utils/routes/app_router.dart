@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:gnac_orientation/core/presentation/about_screen.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/course_register_screen.dart';
@@ -22,6 +23,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: MyAppRoute.page),
         AutoRoute(page: MyCoursesRoute.page),
         AutoRoute(page: CourseRegisterRoute.page),
+        AutoRoute(page: AboutRoute.page),
         AutoRoute(page: MyScoresRoute.page)
       ];
 }

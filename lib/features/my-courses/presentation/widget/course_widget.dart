@@ -22,6 +22,7 @@ class CourseWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             flex: 4,

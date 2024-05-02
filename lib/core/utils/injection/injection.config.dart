@@ -50,6 +50,7 @@ extension GetItInjectableX on _i1.GetIt {
           text: gh<String>(),
           enabledPop: gh<bool>(),
           key: gh<_i7.Key>(),
+          enabledActions: gh<bool>(),
         ));
     gh.factory<_i8.MyAppScreen>(() => _i8.MyAppScreen(key: gh<_i7.Key>()));
     gh.lazySingleton<_i9.MyClassBloc>(() => _i9.MyClassBloc());

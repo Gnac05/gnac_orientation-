@@ -17,101 +17,100 @@ class MyClassBody extends StatelessWidget {
     final appConstant = AppConstant();
     String myClass = 'A1';
     final myClassBloc = MyClassBloc();
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 8,
-          horizontal: 16,
-        ),
-        child: Column(
-          children: [
-            const AppTitle(text: "Ma Série"),
-            const Text(
-              "Quelle est ta série ? On utilise le Guide d'orientation de cette année pour t'aider à mieux choisir ta filière de formation.",
-              overflow: TextOverflow.clip,
-            ),
-            BlocBuilder<MyClassBloc, MyClassState>(
-              bloc: myClassBloc,
-              builder: (context, state) {
-                if (state is MyClassChanged) {
-                  myClass = state.myClass;
-                }
-                return Container(
-                  height: 350,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: AppTheme().appSecondaryColor!,
-                        width: 3,
-                      )),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children: List.generate(2, (indexColumn) {
-                        return Expanded(
-                          child: Column(
-                            children: List.generate(
-                              indexColumn != 1
-                                  ? (appConstant.classList.length / 2)
-                                      .ceil()
-                                  : appConstant.classList.length -
-                                      (appConstant.classList.length /
-                                              2)
-                                          .ceil(),
-                              (index) => Expanded(
-                                child: RadioListTile<String>(
-                                  title: Text(
-                                    appConstant.classList[
-                                        (appConstant.classList.length /
-                                                        2)
+    return Center(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 16,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const AppTitle(text: "Ma Série"),
+              const Text(
+                "Quelle est ta série ? On utilise le Guide d'orientation de cette année pour t'aider à mieux choisir ta filière de formation.",
+                overflow: TextOverflow.clip,
+              ),
+              BlocBuilder<MyClassBloc, MyClassState>(
+                bloc: myClassBloc,
+                builder: (context, state) {
+                  if (state is MyClassChanged) {
+                    myClass = state.myClass;
+                  }
+                  return Container(
+                    height: 350,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: AppTheme().appSecondaryColor!,
+                          width: 3,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        children: List.generate(2, (indexColumn) {
+                          return Expanded(
+                            child: Column(
+                              children: List.generate(
+                                indexColumn != 1
+                                    ? (appConstant.classList.length / 2).ceil()
+                                    : appConstant.classList.length -
+                                        (appConstant.classList.length / 2)
+                                            .ceil(),
+                                (index) => Expanded(
+                                  child: RadioListTile<String>(
+                                    title: Text(
+                                      appConstant.classList[
+                                          (appConstant.classList.length / 2)
+                                                      .ceil() *
+                                                  indexColumn +
+                                              index],
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    value: appConstant.classList[
+                                        (appConstant.classList.length / 2)
                                                     .ceil() *
                                                 indexColumn +
                                             index],
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    textAlign: TextAlign.center,
+                                    groupValue: myClass,
+                                    onChanged: (value) {
+                                      myClassBloc.add(ChangeMyClass(value!));
+                                    },
                                   ),
-                                  value: appConstant.classList[
-                                      (appConstant.classList.length /
-                                                      2)
-                                                  .ceil() *
-                                              indexColumn +
-                                          index],
-                                  groupValue: myClass,
-                                  onChanged: (value) {
-                                    myClassBloc.add(ChangeMyClass(value!));
-                                  },
                                 ),
                               ),
                             ),
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-                );
-              },
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: ElevatedButton(
-                onPressed: () {
-                  debugPrint('##=======> Ma Série : $myClass');
-                  AutoRouter.of(context).push(
-                    MyCoursesRoute(
-                      myClass: myClass,
+                          );
+                        }),
+                      ),
                     ),
                   );
                 },
-                style: const ButtonStyle(
-                    // backgroundColor: AppTheme>().appPrimaryColor,
-                    ),
-                child: const Text("Continuer"),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.all(25),
+                child: ElevatedButton(
+                  onPressed: () {
+                    debugPrint('##=======> Ma Série : $myClass');
+                    AutoRouter.of(context).push(
+                      MyCoursesRoute(
+                        myClass: myClass,
+                      ),
+                    );
+                  },
+                  style: const ButtonStyle(
+                      // backgroundColor: AppTheme>().appPrimaryColor,
+                      ),
+                  child: const Text("Continuer"),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

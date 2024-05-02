@@ -17,11 +17,13 @@ class CourseRegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(context, text: "Matière", enabledPop: true,),
-      body: CourseRegisterBody(
-        myClass: myClass,
-        courses: courses,
-        coursesMap: coursesMap,
-        myCourseBloc: myCourseBloc,
+      body: Center(
+        child: CourseRegisterBody(
+          myClass: myClass,
+          courses: courses,
+          coursesMap: coursesMap,
+          myCourseBloc: myCourseBloc,
+        ),
       ),
     );
   }

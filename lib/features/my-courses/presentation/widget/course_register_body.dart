@@ -25,7 +25,6 @@ class CourseRegisterBody extends StatefulWidget {
 }
 
 class _CourseRegisterBodyState extends State<CourseRegisterBody> {
-  
   String myCourse = "ALLEMAND";
   TextEditingController coefController = TextEditingController();
   TextEditingController noteController = TextEditingController();
@@ -37,6 +36,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
     myCourse = widget.courses.first;
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MyCourseBloc, MyCourseState>(
@@ -59,6 +59,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -132,7 +133,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                     FilteringTextInputFormatter.digitsOnly,
                   ],
                   decoration: InputDecoration(
-                    hintText: "Coefficent ${coef??''}",
+                    hintText: "Coefficent ${coef ?? ''}",
                   ),
                 ),
               ),
@@ -156,7 +157,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                     FilteringTextInputFormatter.deny(' ')
                   ],
                   decoration: InputDecoration(
-                    hintText: "Note ${note??''}",
+                    hintText: "Note ${note ?? ''}",
                   ),
                 ),
               ),

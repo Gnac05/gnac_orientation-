@@ -49,5 +49,7 @@ class EditCourse extends MyCourseEvent{
 
 class ResultsCourses extends MyCourseEvent{
   final Map<String, dynamic> userData;
-  ResultsCourses({required this.userData});
+  final String myClass;
+
+  ResultsCourses({required this.userData, required this.myClass});
 }

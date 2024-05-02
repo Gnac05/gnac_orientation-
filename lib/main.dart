@@ -5,11 +5,13 @@ import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:injectable/injectable.dart';
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-   await getIt.reset();
-  runApp(const MyAppScreen());
+  await getIt.reset();
+  runApp(
+    const MyAppScreen(),
+  );
 }
 
 @RoutePage()

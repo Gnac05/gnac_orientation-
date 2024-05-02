@@ -118,6 +118,7 @@ class MyScoresBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: children,
         ),
       ),
