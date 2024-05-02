@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "gnac-orientation",
     "public": "public",
     "ignore": [
       "firebase.json",
