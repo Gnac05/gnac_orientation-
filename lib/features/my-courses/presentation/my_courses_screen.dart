@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gnac_orientation/core/presentation/my_app_bar.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/widget/my_courses_body.dart';
@@ -13,12 +14,11 @@ import 'package:injectable/injectable.dart';
 @injectable
 class MyCoursesScreen extends StatelessWidget {
   static const routeName = '/courses';
-  const MyCoursesScreen({super.key, required this.myClass});
-  final String myClass;
+  const MyCoursesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final  myCourseBloc = MyCourseBloc(myClass: myClass);
+    final  myCourseBloc = MyCourseBloc(myClass: getIt<AppConstant>().myUserData["Série"]);
     return Scaffold(
       body: BlocBuilder<MyCourseBloc, MyCourseState>(
         bloc: myCourseBloc,
@@ -38,7 +38,7 @@ class MyCoursesScreen extends StatelessWidget {
             body:  MyCoursesBody(
               coursesMap: coursesMap,
               courses: courses,
-              myClass: myClass,
+            
               myCourseBloc: myCourseBloc,
             ),
             // floatingActionButton: FloatingActionButton(

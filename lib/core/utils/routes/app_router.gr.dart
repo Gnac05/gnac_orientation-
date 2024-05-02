@@ -16,13 +16,9 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     CareersRoute.name: (routeData) {
-      final args = routeData.argsAs<CareersRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: CareersPage(
-          key: args.key,
-          myClass: args.myClass,
-        ),
+        child: const CareersPage(),
       );
     },
     ChatRoute.name: (routeData) {
@@ -63,13 +59,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     MyCoursesRoute.name: (routeData) {
-      final args = routeData.argsAs<MyCoursesRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: MyCoursesScreen(
-          key: args.key,
-          myClass: args.myClass,
-        ),
+        child: const MyCoursesScreen(),
       );
     },
     MyProfilsRoute.name: (routeData) {
@@ -99,40 +91,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [CareersPage]
-class CareersRoute extends PageRouteInfo<CareersRouteArgs> {
-  CareersRoute({
-    Key? key,
-    required String myClass,
-    List<PageRouteInfo>? children,
-  }) : super(
+class CareersRoute extends PageRouteInfo<void> {
+  const CareersRoute({List<PageRouteInfo>? children})
+      : super(
           CareersRoute.name,
-          args: CareersRouteArgs(
-            key: key,
-            myClass: myClass,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'CareersRoute';
 
-  static const PageInfo<CareersRouteArgs> page =
-      PageInfo<CareersRouteArgs>(name);
-}
-
-class CareersRouteArgs {
-  const CareersRouteArgs({
-    this.key,
-    required this.myClass,
-  });
-
-  final Key? key;
-
-  final String myClass;
-
-  @override
-  String toString() {
-    return 'CareersRouteArgs{key: $key, myClass: $myClass}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -246,40 +214,16 @@ class MyClassRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [MyCoursesScreen]
-class MyCoursesRoute extends PageRouteInfo<MyCoursesRouteArgs> {
-  MyCoursesRoute({
-    Key? key,
-    required String myClass,
-    List<PageRouteInfo>? children,
-  }) : super(
+class MyCoursesRoute extends PageRouteInfo<void> {
+  const MyCoursesRoute({List<PageRouteInfo>? children})
+      : super(
           MyCoursesRoute.name,
-          args: MyCoursesRouteArgs(
-            key: key,
-            myClass: myClass,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'MyCoursesRoute';
 
-  static const PageInfo<MyCoursesRouteArgs> page =
-      PageInfo<MyCoursesRouteArgs>(name);
-}
-
-class MyCoursesRouteArgs {
-  const MyCoursesRouteArgs({
-    this.key,
-    required this.myClass,
-  });
-
-  final Key? key;
-
-  final String myClass;
-
-  @override
-  String toString() {
-    return 'MyCoursesRouteArgs{key: $key, myClass: $myClass}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

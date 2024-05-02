@@ -6,6 +6,8 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
+import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -16,11 +18,9 @@ class MyCoursesBody extends StatefulWidget {
       {super.key,
       required this.coursesMap,
       required this.myCourseBloc,
-      required this.myClass,
       required this.courses});
   final Map<String, dynamic> coursesMap;
   final MyCourseBloc myCourseBloc;
-  final String myClass;
   final List<String> courses;
 
   @override
@@ -28,6 +28,7 @@ class MyCoursesBody extends StatefulWidget {
 }
 
 class _MyCoursesBodyState extends State<MyCoursesBody> {
+  String myClass = getIt<AppConstant>().myUserData["Série"];
   final _notesKey = GlobalKey<FormBuilderState>();
   List<Widget> myChildren = [];
   @override
@@ -166,7 +167,7 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
           children: [
             InfoWidget(
               title:
-                  'Quelles notes t\'as obtenu lors de la phase écrite de ton BAC ${widget.myClass} ?',
+                  'Quelles notes t\'as obtenu lors de la phase écrite de ton BAC $myClass ?',
               descrition:
                   "Veuillez entrer toutes vos notes, car toutes ces notes sont requises. Je vous pris d'entrer vos réelles notes.",
             ),
@@ -230,10 +231,11 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                     debugPrint(
                       widget.coursesMap.toString(),
                     );
+                    getIt<AppConstant>()
+                        .myUserData
+                        .addAll({"Matières": widget.coursesMap});
                     AutoRouter.of(context).push(
-                      CareersRoute(
-                        myClass: widget.myClass,
-                      ),
+                      const CareersRoute(),
                     );
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
                   }

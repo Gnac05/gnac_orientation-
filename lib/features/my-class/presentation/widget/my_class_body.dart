@@ -5,6 +5,7 @@ import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -95,10 +96,11 @@ class MyClassBody extends StatelessWidget {
               child: NextButtonWidget(
                 onPressed: () {
                   debugPrint('##=======> Ma Série : $myClass');
+                  getIt<AppConstant>().myUserData.addAll({
+                    "Série": myClass,
+                  });
                   AutoRouter.of(context).push(
-                    MyCoursesRoute(
-                      myClass: myClass,
-                    ),
+                    const MyCoursesRoute(),
                   );
                 },
               ),

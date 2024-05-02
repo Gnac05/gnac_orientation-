@@ -53,7 +53,9 @@ class _SectorWidgetState extends State<SectorWidget> {
                         child: Row(
                           children: [
                             Text('école :   '.toUpperCase(), style: TextStyle(color: AppTheme().appSecondaryColor, fontSize: 16, fontWeight: FontWeight.bold,), ),
-                            Text(widget.sector.school,  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600,),maxLines: 2,),
+                            SizedBox(
+                              width: 150,
+                              child: Text(widget.sector.school,  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600,),maxLines: 2,)),
                           ],
                         ),
                       ),
@@ -77,7 +79,7 @@ class _SectorWidgetState extends State<SectorWidget> {
                         child: Row(
                           children: [
                             Text('Moyenne :   ', style: TextStyle(color: AppTheme().appSecondaryColor, fontSize: 16, fontWeight: FontWeight.bold,), ),
-                            Text(widget.sector.moyenne.toString(),  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600,),maxLines: 2,),
+                            Text(widget.sector.moyenne.toStringAsFixed(2),  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600,),maxLines: 2,),
                           ],
                         ),
                       ),

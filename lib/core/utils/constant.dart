@@ -7,6 +7,8 @@ import 'package:injectable/injectable.dart';
 class AppConstant {
   final appName = "Gnac Orientation";
 
+  Map<String, dynamic> myUserData = {};
+
   // final MyCourseBloc myCourseBloc = MyCourseBloc();
 
   final List<String> classList = [

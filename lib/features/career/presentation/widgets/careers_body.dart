@@ -5,17 +5,26 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 
 class CareersBody extends StatefulWidget {
-  const CareersBody({super.key, required this.carrerList});
-  final List<String> carrerList;
+  const CareersBody({super.key});
   @override
   State<CareersBody> createState() => _CareersBodyState();
 }
 
 class _CareersBodyState extends State<CareersBody> {
+  List<String> carrerList = ['empty'];
+  String myClass = getIt<AppConstant>().myUserData["Série"];
+  @override
+  void initState() {
+    carrerList = AppConstant.carrerList[myClass] ?? [];
+    super.initState();
+  }
+
   final _careersKey = GlobalKey<FormBuilderState>();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -34,11 +43,11 @@ class _CareersBodyState extends State<CareersBody> {
                 FormBuilderCheckboxGroup<String>(
                   name: "careers",
                   options: List.generate(
-                    widget.carrerList.length,
+                    carrerList.length,
                     (index) => FormBuilderFieldOption(
-                      value: widget.carrerList[index],
+                      value: carrerList[index],
                       child: Text(
-                        widget.carrerList[index],
+                        carrerList[index],
                         style: const TextStyle(fontSize: 16),
                       ),
                     ),
@@ -61,10 +70,14 @@ class _CareersBodyState extends State<CareersBody> {
                 if (_careersKey.currentState!.saveAndValidate()) {
                   debugPrint(
                       _careersKey.currentState!.value.keys.toList().toString());
-                  debugPrint(_careersKey.currentState!.value.entries
-                      .toList()
-                      .toString());
-                  AutoRouter.of(context).push(const SectorsRoute());
+                  final careers = _careersKey.currentState!.value.entries
+                      .toList().first;
+
+                  debugPrint(careers.toString());
+                  getIt<AppConstant>().myUserData.addAll({careers.key : careers.value});
+                  AutoRouter.of(context).push(
+                    const SectorsRoute(),
+                  );
                 }
               },
             ),

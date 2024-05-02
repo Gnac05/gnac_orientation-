@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 
-@injectable
 class AnimateFloatingActionButton extends StatelessWidget {
   const AnimateFloatingActionButton({super.key, this.onPressed});
   final void Function()? onPressed;

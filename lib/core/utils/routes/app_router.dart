@@ -24,7 +24,7 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          // initial: true,
+          initial: true,
           page: MyProfilsRoute.page,
           path: MyProfilsScreen.routeName,
         ),
@@ -53,7 +53,7 @@ class AppRouter extends _$AppRouter {
           path: CreateProfilPage.routeName,
         ),
         AutoRoute(
-          initial: true,
+          // initial: true,
           page: SectorsRoute.page,
           path: SectorsPage.routeName,
         ),

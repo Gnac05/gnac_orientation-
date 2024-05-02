@@ -177,7 +177,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                                       note: double.parse(noteController.text),
                                       lastCourses: widget.courses,
                                       lastCoursesMap: widget.coursesMap));
-                                  AutoRouter.of(context).pop();
+                                  AutoRouter.of(context).popForced();
                                 } else if (state is MyCourseEditing) {
                                   debugPrint('MyCourseEditing <======####');
                                   widget.myCourseBloc.add(UpdateCourse(
@@ -187,7 +187,7 @@ class _CourseRegisterBodyState extends State<CourseRegisterBody> {
                                       note: double.parse(noteController.text),
                                       lastCourses: widget.courses,
                                       lastCoursesMap: widget.coursesMap));
-                                  AutoRouter.of(context).pop();
+                                  AutoRouter.of(context).popForced();
                                 }
                               } catch (e) {
                                 debugPrint("Error : $e");
