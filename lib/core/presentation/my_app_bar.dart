@@ -40,7 +40,7 @@ class MyAppBar extends AppBar {
           leading: enabledPop
               ? IconButton(
                   onPressed: () {
-                    AutoRouter.of(context).pop();
+                    AutoRouter.of(context).popForced();
                   },
                   icon: FaIcon(
                     FontAwesomeIcons.arrowLeft,
