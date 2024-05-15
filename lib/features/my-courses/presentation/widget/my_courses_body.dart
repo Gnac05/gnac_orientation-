@@ -53,18 +53,79 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                     padding: const EdgeInsets.symmetric(
                       vertical: 8,
                     ),
-                    child: Center(
-                      child: Text(
-                        key,
-                        style: TextStyle(
-                          color: AppTheme().appPrimaryColor,
-                          fontSize: 14,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
+                    child: key.contains('LV')
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '$key : ',
+                                  style: TextStyle(
+                                    color: AppTheme().appPrimaryColor,
+                                    fontSize: 14,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: FormBuilderDropdown(
+                                  name: '${key}M',
+                                  validator: FormBuilderValidators.required(
+                                      errorText: 'Obligatoire'),
+                                  decoration: const InputDecoration(
+                                    hintText: "Matière",
+                                  ),
+                                  items: [
+                                    DropdownMenuItem(
+                                      value: 'ANGLAIS',
+                                      child: Text(
+                                        'ANGLAIS',
+                                        style: TextStyle(
+                                          color: AppTheme().appSecondaryColor,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                    DropdownMenuItem(
+                                      value: 'ALLEMAND',
+                                      child: Text(
+                                        'ALLEMAND',
+                                        style: TextStyle(
+                                          color: AppTheme().appSecondaryColor,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                    DropdownMenuItem(
+                                      value: 'ESPAGNOL',
+                                      child: Text(
+                                        'ESPAGNOL',
+                                        style: TextStyle(
+                                          color: AppTheme().appSecondaryColor,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )
+                        : Center(
+                            child: Text(
+                              key,
+                              style: TextStyle(
+                                color: AppTheme().appPrimaryColor,
+                                fontSize: 14,
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                   ),
                 ),
               ),
@@ -224,19 +285,78 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
               child: NextButtonWidget(
                 onPressed: () {
                   if (_notesKey.currentState!.saveAndValidate()) {
-                    widget.coursesMap.forEach((key, value) {
-                      widget.coursesMap[key]["Note"] = double.parse(
-                          _notesKey.currentState!.value[key].toString());
-                    });
-                    debugPrint(
-                      widget.coursesMap.toString(),
-                    );
-                    getIt<AppConstant>()
-                        .myUserData
-                        .addAll({"Matières": widget.coursesMap});
-                    AutoRouter.of(context).push(
-                      const CareersRoute(),
-                    );
+                    if (myClass.contains("A")) {
+                      final key1 = _notesKey.currentState!.value["LV1M"];
+                      final key2 = _notesKey.currentState!.value["LV2M"];
+                      if (key1 == key2) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              "LV1 doit être différent de LV2",
+                            ),
+                          ),
+                        );
+                      } else {
+                        widget.coursesMap.forEach((key, value) {
+                          widget.coursesMap[key]["Note"] = double.parse(
+                              _notesKey.currentState!.value[key].toString());
+                        });
+                        // LV1M or LV2M
+                        final map1 = widget.coursesMap["LV1"];
+                        final map2 = widget.coursesMap["LV2"];
+                        Map<String, dynamic> coursesMap = widget.coursesMap;
+                        coursesMap[key1] = map1;
+                        coursesMap[key2] = map2;
+
+                        debugPrint(
+                          coursesMap.toString(),
+                        );
+
+                        getIt<AppConstant>()
+                            .myUserData
+                            .addAll({"Matières": coursesMap});
+                        AutoRouter.of(context).push(
+                          const CareersRoute(),
+                        );
+                      }
+                    } else if (myClass == "B") {
+                      widget.coursesMap.forEach((key, value) {
+                        widget.coursesMap[key]["Note"] = double.parse(
+                            _notesKey.currentState!.value[key].toString());
+                      });
+
+                      final key1 = _notesKey.currentState!.value["LV1M"];
+                      final map1 = widget.coursesMap["LV1"];
+                      Map<String, dynamic> coursesMap = widget.coursesMap;
+                      coursesMap[key1] = map1;
+                      debugPrint(
+                        coursesMap.toString(),
+                      );
+                      getIt<AppConstant>()
+                          .myUserData
+                          .addAll({"Matières": coursesMap});
+                      AutoRouter.of(context).push(
+                        const CareersRoute(),
+                      );
+                    } else {
+                      // Other class
+                      widget.coursesMap.forEach((key, value) {
+                        widget.coursesMap[key]["Note"] = double.parse(
+                            _notesKey.currentState!.value[key].toString());
+                      });
+
+                      debugPrint(
+                        widget.coursesMap.toString(),
+                      );
+
+                      getIt<AppConstant>()
+                          .myUserData
+                          .addAll({"Matières": widget.coursesMap});
+                      AutoRouter.of(context).push(
+                        const CareersRoute(),
+                      );
+                    }
+
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
                   }
                 },

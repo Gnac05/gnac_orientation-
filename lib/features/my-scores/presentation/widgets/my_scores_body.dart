@@ -111,7 +111,7 @@ class _MyScoresBodyState extends State<MyScoresBody> {
                       height: height,
                       withColor: true,
                       child: Text(
-                        filiere["Moyenne"],
+                        filiere["Moyenne"].toString(),
                         style: TextStyle(
                           color: AppTheme().appPrimaryColor,
                           fontWeight: FontWeight.w600,

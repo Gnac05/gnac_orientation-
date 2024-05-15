@@ -4,6 +4,7 @@ import 'package:gnac_orientation/core/presentation/widgets/animate_floating_acti
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/features/career/presentation/widgets/career_widget.dart';
 import 'package:gnac_orientation/features/my-scores/domain/reposirtory/algo.dart';
@@ -34,8 +35,8 @@ class SectorBody extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () async {
                     final result = await MyAlgorithm().gnacOrientationAlgo(
-                      userData: AppConstant().userData,
-                      data: AppConstant().data,
+                      userData: getIt<AppConstant>().myUserData,
+                      data: getIt<AppConstant>().data,
                     );
                     if (context.mounted) {
                       AutoRouter.of(context).push(

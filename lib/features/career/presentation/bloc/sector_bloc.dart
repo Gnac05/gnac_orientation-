@@ -11,49 +11,64 @@ part 'sector_state.dart';
 class SectorBloc extends Bloc<SectorEvent, SectorState> {
   SectorBloc() : super(SectorInitial()) {
     on<GetSectorsEvent>((event, emit) {
-      emit(LoadingSectorState());
-      Map<String, dynamic> userData = getIt<AppConstant>().myUserData;
-      List<String> careers = userData['careers'];
-      String myClass = userData['Série'];
+      try {
+        emit(LoadingSectorState());
+        Map<String, dynamic> userData = getIt<AppConstant>().myUserData;
+        List<String> careers = userData['careers'];
+        String myClass = userData['Série'];
 
-      Map<String, dynamic> careersData =
-          getIt<AppConstant>().allCarrers[myClass];
+        Map<String, dynamic> careersData =
+            getIt<AppConstant>().allCarrers[myClass];
 
-      List<CareerWidget> careerWidgets = [];
-      for (var career in careers) {
-        Map<String, dynamic> sectors = careersData[career];
-        List<Sector> mySectors = [];
-        int n = 0;
-        double sum = 0;
+        List<CareerWidget> careerWidgets = [];
+        for (var career in careers) {
+          Map<String, dynamic> sectors = careersData[career];
+          List<Sector> mySectors = [];
+          int n = 0;
+          double sum = 0;
 
-        // For each Sector Select
-        sectors.forEach((key, value) {
-          value["Matières"].forEach((ue) {
-            // print("Matière: " + ue);
-            sum += userData["Matières"][ue]["Note"] *
-                userData["Matières"][ue]["Coefficient"];
-            n += userData["Matières"][ue]["Coefficient"] as int;
+          // For each Sector Select
+          sectors.forEach((key, value) {
+            bool err = false;
+            value["Matières"].forEach((ue) {
+              // print("Matière: " + ue);
+              try {
+                sum += userData["Matières"][ue]["Note"] *
+                    userData["Matières"][ue]["Coefficient"];
+                n += userData["Matières"][ue]["Coefficient"] as int;
+              } catch (e) {
+                debugPrint("Error : $e");
+                err = true;
+                return;
+              }
+            });
+            if (err == false) {
+              double moyenne = (sum / n);
+              mySectors.add(
+                Sector(
+                  name: key,
+                  school: value["Ecole/Faculté"],
+                  university: value["Université"],
+                  moyenne: moyenne,
+                  nbBourse: value["Bourse"],
+                  nbSecour: value["Aide"],
+                  metiers: value["Métiers"],
+                ),
+              );
+            }
           });
-          double moyenne = (sum / n);
-          mySectors.add(
-            Sector(
-              name: key,
-              school: value["Ecole/Faculté"],
-              university: value["Université"],
-              moyenne: moyenne,
-              nbBourse: value["Bourse"],
-              nbSecour: value["Aide"],
-            ),
-          );
-        });
 
-        careerWidgets.add(CareerWidget(
-          name: career,
-          mySectors: mySectors,
-        ));
+          careerWidgets.add(CareerWidget(
+            name: career,
+            mySectors: mySectors,
+          ));
+        }
+
+        emit(ReadySectorState(myCareerSectors: careerWidgets));
+      } catch (e) {
+        debugPrint("Error : $e");
+        emit(FailedSectorState());
       }
-
-      emit(ReadySectorState(myCareerSectors: careerWidgets));
     });
   }
 }

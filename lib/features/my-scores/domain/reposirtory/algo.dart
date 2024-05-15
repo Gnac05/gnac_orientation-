@@ -1,5 +1,6 @@
-
 // @lazySingleton
+import 'package:flutter/material.dart';
+
 class MyAlgorithm {
   Future<Map<String, dynamic>> gnacOrientationAlgo({
     required Map<String, dynamic> userData,
@@ -18,13 +19,20 @@ class MyAlgorithm {
           int n = 0;
           double sum = 0;
           // For each UE
+          bool err = false;
           sector["Matières"].forEach((ue) {
             // print("Matière: " + ue);
-            sum += userData["Matières"][ue]["Note"] *
-                userData["Matières"][ue]["Coefficient"];
-            n += userData["Matières"][ue]["Coefficient"] as int;
+            try {
+              sum += userData["Matières"][ue]["Note"] *
+                  userData["Matières"][ue]["Coefficient"];
+              n += userData["Matières"][ue]["Coefficient"] as int;
+            } catch (e) {
+              debugPrint("Error : $e");
+              err = true;
+              return;
+            }
           });
-          sector["Moyenne"] = (sum / n).toStringAsFixed(2);
+          sector["Moyenne"] = err ? 0.0 : (sum / n).toStringAsFixed(2);
         });
       });
     });

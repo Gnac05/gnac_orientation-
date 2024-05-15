@@ -34,7 +34,24 @@ class _SectorsPageState extends State<SectorsPage> {
         bloc: bloc,
         builder: (context, state) {
           if (state is LoadingSectorState) {
-            return const CircularProgressIndicator();
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          if (state is FailedSectorState) {
+            return const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Center(
+                child: Text(
+                  "Quelque chose s'est mal passé !!!\nVeuiller essayer à nouveau.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            );
           }
           if (state is ReadySectorState) {
             return SectorBody(

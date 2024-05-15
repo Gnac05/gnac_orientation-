@@ -5,6 +5,7 @@ class Sector {
   final double moyenne;
   final int nbBourse;
   final int nbSecour;
+  final List<String> metiers;
 
   Sector({
     required this.name,
@@ -13,7 +14,6 @@ class Sector {
     required this.moyenne,
     required this.nbBourse,
     required this.nbSecour,
+    required this.metiers,
   });
-
-  
 }

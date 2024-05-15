@@ -124,7 +124,13 @@ class AppConstant {
       "Electrotechnique",
     ],
 
-// G2 and G3
+    // G1, G2 and G3
+    "G1": [
+      "Gestion",
+      "Droit et Sciences Politiques",
+      "Sciences Economiques et de Gestion",
+      "Communication",
+    ],
     "G2": [
       "Gestion",
       "Droit et Sciences Politiques",
@@ -8305,7 +8311,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 225,
           "Aide": 1740,
-          "Matières": ["MATHS", "ECONIMIE", "FRANCAIS"],
+          "Matières": ["MATHS", "ECONOMIE", "FRANCAIS"],
           "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
         },
         "FASEG (UP)": {
@@ -8313,7 +8319,7 @@ class AppConstant {
           "Université": "UP",
           "Bourse": 26,
           "Aide": 60,
-          "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+          "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
           "Métiers": [
             "Analyse et Politique Economiques",
             "Economie Agricole",
@@ -8329,7 +8335,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 9,
           "Aide": 3,
-          "Matières": ["ECONIMIE", "FRANCAIS", "ANGLAIS"],
+          "Matières": ["ECONOMIE", "FRANCAIS", "ANGLAIS"],
           "Métiers": ["Marketing", "Gestion des Ressources Humaines"]
         },
         "IUT (UP)": {
@@ -8351,7 +8357,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 9,
           "Aide": 3,
-          "Matières": ["MATHS", "ANGLAIS", "ECONIMIE"],
+          "Matières": ["MATHS", "ANGLAIS", "ECONOMIE"],
           "Métiers": [
             "Négoce International",
             "Gestion des Relations Maritimes Internationales",
@@ -9185,7 +9191,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 225,
           "Aide": 1740,
-          "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+          "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
           "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
         },
         "FASEG (UP)": {
@@ -9267,7 +9273,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 225,
           "Aide": 1740,
-          "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+          "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
           "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
         },
         "FASEG (UP)": {
@@ -9349,7 +9355,7 @@ class AppConstant {
           "Université": "UAC",
           "Bourse": 225,
           "Aide": 1740,
-          "Matières": ["ETUDE DE CAS", "ECONIMIE", "FRANCAIS"],
+          "Matières": ["ETUDE DE CAS", "ECONOMIE", "FRANCAIS"],
           "Métiers": ["Economie", "Gestion", "Finance", "Comptabilité"]
         },
         "FASEG (UP)": {
