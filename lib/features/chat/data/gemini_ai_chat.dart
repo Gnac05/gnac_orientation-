@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:injectable/injectable.dart';
 
@@ -44,16 +46,17 @@ class GeminiAiChat {
   bool initChat() {
     if (hasModel) {
       // Initialize the chat
-      chat = model!.startChat(
-        history: [
-          Content.text(
-              'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC béninois.'),
-          Content.model([
-            TextPart(
-                'Je serais très heureux de pouvoir vous aider a bien choisir votre filières.'),
-          ])
-        ],
-      );
+      chat = model!.startChat(history: [
+        Content.text(
+          'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC béninois. Voici mes données : ${getIt<AppConstant>().myUserData}',
+        ),
+        Content.model([
+          TextPart(
+              'Je serais très heureux de pouvoir vous aider a bien choisir votre filières.'),
+        ])
+      ], safetySettings: [
+        SafetySetting(HarmCategory.dangerousContent, HarmBlockThreshold.none),
+      ]);
       return true;
     }
     return false;

@@ -20,6 +20,8 @@ class SectorBloc extends Bloc<SectorEvent, SectorState> {
         Map<String, dynamic> careersData =
             getIt<AppConstant>().allCarrers[myClass];
 
+        Map<String, dynamic> userSaveSector = {};
+
         List<CareerWidget> careerWidgets = [];
         for (var career in careers) {
           Map<String, dynamic> sectors = careersData[career];
@@ -62,7 +64,9 @@ class SectorBloc extends Bloc<SectorEvent, SectorState> {
             name: career,
             mySectors: mySectors,
           ));
+          userSaveSector.addAll({career: mySectors});
         }
+        getIt<AppConstant>().myUserData.addAll({"Carrières envisagées": userSaveSector});
 
         emit(ReadySectorState(myCareerSectors: careerWidgets));
       } catch (e) {

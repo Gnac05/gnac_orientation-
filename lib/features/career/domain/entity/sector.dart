@@ -16,4 +16,15 @@ class Sector {
     required this.nbSecour,
     required this.metiers,
   });
+
+  Map<String, dynamic> toMap() => {
+    'name': name,
+    'school': school,
+    'university': university,
+    'moyenne': moyenne,
+    'nbBourse': nbBourse,
+    'nbSecour': nbSecour,
+    'metiers': metiers,
+  };
+
 }
