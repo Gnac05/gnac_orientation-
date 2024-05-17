@@ -298,7 +298,7 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text(
-                            'Quelque chose s\'est mal passée 👌',
+                            'Quelque chose s\'est mal passée 😢',
                           ),
                         ),
                       );
