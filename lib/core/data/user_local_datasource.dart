@@ -23,7 +23,7 @@ class UserDatabase {
       mypath.join(path, 'user_database.db'),
       onCreate: (db, version) {
         return db.execute(
-          "CREATE TABLE users(id TEXT PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, classe TEXT, fillieres TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
+          "CREATE TABLE users(id INT PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, classe TEXT, fillieres TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
         );
       },
       version: 1,

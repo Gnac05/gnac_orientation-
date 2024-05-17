@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class User {
-  final String id;
+  final int id;
   final String pseudo;
   final String? picture;
   final String? firstName;

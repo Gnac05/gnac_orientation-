@@ -270,7 +270,7 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                         '"pseudo": $pseudo,\n "name": $lastName, \n "firstName": $firstName,');
                     UserDatabase userDatabase = UserDatabase.instance;
                     final user = User(
-                      id: '000',
+                      id: 0,
                       pseudo: pseudo,
                       firstName: firstName,
                       secondName: lastName,
