@@ -6,9 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:gnac_orientation/core/data/user_local_datasource.dart';
+import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
+import 'package:gnac_orientation/core/utils/constant.dart';
+import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
 import 'package:gnac_orientation/features/my-profils/presentation/bloc/my_profile_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -56,7 +60,6 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                         bloc: bloc,
                         builder: (context, state) {
                           if (state is MyProfileLoading) {
-                            
                             return const CircularProgressIndicator();
                           }
                           if (state is PictureReadyState) {
@@ -253,13 +256,54 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
           Padding(
             padding: const EdgeInsets.only(top: 20.0, bottom: 40),
             child: NextButtonWidget(
-              onPressed: () {
+              onPressed: () async {
                 if (_profilKey.currentState!.saveAndValidate()) {
-                  debugPrint('Picture with : $picture END');
-                  debugPrint('Validate with : ');
-                  debugPrint(
-                      '"pseudo": ${_profilKey.currentState!.value['pseudo']},\n "name": ${_profilKey.currentState!.value['name']}, \n "firstName": ${_profilKey.currentState!.value['firstName']},');
-                  AutoRouter.of(context).pushNamed(MyClassScreen.routeName);
+                  try {
+                    final pseudo = _profilKey.currentState!.value['pseudo'];
+                    final lastName = _profilKey.currentState!.value['name'];
+                    final firstName =
+                        _profilKey.currentState!.value['firstName'];
+
+                    debugPrint('Picture with : $picture END');
+                    debugPrint('Validate with : ');
+                    debugPrint(
+                        '"pseudo": $pseudo,\n "name": $lastName, \n "firstName": $firstName,');
+                        UserDatabase userDatabase = UserDatabase.instance;
+                    int myId = await userDatabase.insertUser(
+                      User(
+                        id: '000',
+                        pseudo: pseudo,
+                        firstName: firstName,
+                        secondName: lastName,
+                        createdAt: DateTime.now(),
+                        updatedAt: DateTime.now(),
+                      ),
+                    );
+
+                    getIt<AppConstant>().myUserData.addAll({'id': myId});
+
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Profile créer avec success 👌',
+                          ),
+                        ),
+                      );
+                      AutoRouter.of(context).pushNamed(MyClassScreen.routeName);
+                    }
+                  } catch (e) {
+                    debugPrint("Error : $e");
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Quelque chose s\'est mal passée 👌',
+                          ),
+                        ),
+                      );
+                    }
+                  }
                 }
               },
             ),

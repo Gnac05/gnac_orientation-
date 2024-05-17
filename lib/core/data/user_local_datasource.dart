@@ -30,9 +30,9 @@ class UserDatabase {
     );
   }
 
-  Future<void> insertUser(User user) async {
+  Future<int> insertUser(User user) async {
     final Database db = await instance.database;
-    await db.insert('users', user.toMap(),
+    return await db.insert('users', user.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 

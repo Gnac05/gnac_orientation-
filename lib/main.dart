@@ -10,7 +10,7 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await getIt.reset();
   configureDependencies(); 
-   await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env");
   runApp(const MyAppScreen());
 }
 

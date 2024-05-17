@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gnac_orientation/core/data/user_local_datasource.dart';
+import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 
@@ -30,6 +33,19 @@ class MyProfileBloc extends Bloc<MyprofileEvent, MyProfileState> {
       if (image != null) {
         emit(PictureReadyState(image.path));
       } else {
+        emit(MyProfileFailure());
+      }
+    });
+
+    on<GetUsersEvent>((event, emit) async {
+      try {
+        emit(MyProfileLoading());
+        UserDatabase userDatabase = UserDatabase.instance;
+        List<User> users = await userDatabase.getUsers();
+
+        emit(UsersReadyState(allProfiles: users));
+      } catch (e) {
+        debugPrint("Error : $e");
         emit(MyProfileFailure());
       }
     });

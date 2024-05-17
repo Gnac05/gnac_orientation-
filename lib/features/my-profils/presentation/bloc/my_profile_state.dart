@@ -13,3 +13,9 @@ class PictureReadyState extends MyProfileState {
 
   PictureReadyState(this.picture);
 }
+
+class UsersReadyState extends MyProfileState {
+  final List<User> allProfiles;
+
+  UsersReadyState({required this.allProfiles});
+}
