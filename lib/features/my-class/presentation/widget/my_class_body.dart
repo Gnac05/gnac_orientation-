@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gnac_orientation/core/data/user_local_datasource.dart';
+import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
@@ -94,14 +96,51 @@ class MyClassBody extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20.0, bottom: 40),
               child: NextButtonWidget(
-                onPressed: () {
+                onPressed: () async {
                   debugPrint('##=======> Ma Série : $myClass');
-                  getIt<AppConstant>().myUserData.addAll({
-                    "Série": myClass,
-                  });
-                  AutoRouter.of(context).push(
-                    const MyCoursesRoute(),
-                  );
+                  try {
+                    UserDatabase userDatabase = UserDatabase.instance;
+                    User user = User.fromMap(getIt<AppConstant>().myUserData);
+                    await userDatabase.updateUser(
+                      User(
+                        id: user.id,
+                        pseudo: user.pseudo,
+                        createdAt: user.createdAt,
+                        updatedAt: DateTime.now(),
+                        classe: myClass,
+                        firstName: user.firstName,
+                        picture: user.picture,
+                        secondName: user.secondName,
+                        fillieres: user.fillieres,
+                        notes: user.notes,
+                      ),
+                    );
+                    getIt<AppConstant>().myUserData.addAll({
+                      "Série": myClass,
+                      'classe': myClass,
+                    });
+                    if (context.mounted) {
+                      AutoRouter.of(context).push(const MyCoursesRoute());
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Votre classe à bien été 👌",
+                          ),
+                        ),
+                      );
+                    }
+                  } catch (e) {
+                    debugPrint("Error : $e");
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Quelque chose s'est mal passée 😢",
+                          ),
+                        ),
+                      );
+                    }
+                  }
                 },
               ),
             ),

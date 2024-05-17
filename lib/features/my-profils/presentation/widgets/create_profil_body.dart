@@ -268,19 +268,21 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                     debugPrint('Validate with : ');
                     debugPrint(
                         '"pseudo": $pseudo,\n "name": $lastName, \n "firstName": $firstName,');
-                        UserDatabase userDatabase = UserDatabase.instance;
+                    UserDatabase userDatabase = UserDatabase.instance;
+                    final user = User(
+                      id: '000',
+                      pseudo: pseudo,
+                      firstName: firstName,
+                      secondName: lastName,
+                      createdAt: DateTime.now(),
+                      updatedAt: DateTime.now(),
+                    );
                     int myId = await userDatabase.insertUser(
-                      User(
-                        id: '000',
-                        pseudo: pseudo,
-                        firstName: firstName,
-                        secondName: lastName,
-                        createdAt: DateTime.now(),
-                        updatedAt: DateTime.now(),
-                      ),
+                      user,
                     );
 
                     getIt<AppConstant>().myUserData.addAll({'id': myId});
+                    getIt<AppConstant>().myUserData.addAll(user.toMap());
 
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
