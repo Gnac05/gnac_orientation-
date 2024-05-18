@@ -65,6 +65,7 @@ class SectorBloc extends Bloc<SectorEvent, SectorState> {
             name: career,
             mySectors: mySectors,
           ));
+          mySectors.sort((a,b)=> b.moyenne.compareTo(a.moyenne));
           userSaveSector.addAll({career: mySectors});
         }
         getIt<AppConstant>().myUserData.addAll({"Carrières envisagées": userSaveSector});
