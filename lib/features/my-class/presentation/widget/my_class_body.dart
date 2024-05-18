@@ -9,6 +9,7 @@ import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
+import 'package:gnac_orientation/core/utils/utils.dart';
 import 'package:gnac_orientation/features/my-class/presentation/bloc/my_class_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -101,43 +102,25 @@ class MyClassBody extends StatelessWidget {
                   try {
                     UserDatabase userDatabase = UserDatabase.instance;
                     User user = User.fromMap(getIt<AppConstant>().myUserData);
-                    await userDatabase.updateUser(
-                      User(
-                        id: user.id,
-                        pseudo: user.pseudo,
-                        createdAt: user.createdAt,
-                        updatedAt: DateTime.now(),
-                        classe: myClass,
-                        firstName: user.firstName,
-                        picture: user.picture,
-                        secondName: user.secondName,
-                        fillieres: user.fillieres,
-                        notes: user.notes,
-                      ),
-                    );
+                    user.updatedAt = DateTime.now();
+                    user.classe = myClass;
+                    await userDatabase.updateUser(user);
                     getIt<AppConstant>().myUserData.addAll({
                       "Série": myClass,
-                      'classe': myClass,
                     });
                     if (context.mounted) {
                       AutoRouter.of(context).push(const MyCoursesRoute());
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            "Votre classe à bien été 👌",
-                          ),
-                        ),
+                      showSnackBar(
+                        context: context,
+                        success: true,
+                        msg: "Votre série a bien été sauvegarder",
                       );
                     }
                   } catch (e) {
                     debugPrint("Error : $e");
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            "Quelque chose s'est mal passée 😢",
-                          ),
-                        ),
+                      showSnackBar(
+                        context: context,
                       );
                     }
                   }

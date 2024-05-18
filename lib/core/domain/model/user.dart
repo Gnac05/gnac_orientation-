@@ -6,15 +6,15 @@ class User {
   final String? picture;
   final String? firstName;
   final String? secondName;
-  final String? classe;
-  final Map<String, String>? notes;
-  final List<String>? fillieres;
+  String? classe;
+  Map<String, dynamic>? notes;
+  List<String>? careers;
   final DateTime createdAt;
-  final DateTime updatedAt;
+   DateTime updatedAt;
 
   User({
      this.classe,
-     this.fillieres,
+     this.careers,
     this.firstName,
     required this.id,
      this.notes,
@@ -28,7 +28,7 @@ class User {
   Map<String, dynamic> toMap() {
     return {
       if(classe!=null)'classe': classe,
-      if(fillieres!=null)'fillieres': json.encode(fillieres),
+      if(careers!=null)'careers': json.encode(careers),
       if(picture!=null) 'picture': picture,
       if (firstName != null) 'first_name': firstName,
       if(notes!=null)'notes': json.encode(notes),
@@ -39,9 +39,23 @@ class User {
     };
   }
 
+  Map<String, dynamic> toUserDataMap() {
+    return {
+      'Série': classe, // #
+      'careers': json.encode(careers), // #
+      'picture': picture,
+      'first_name': firstName,
+      'Matières': json.encode(notes), // #
+      'pseudo': pseudo,
+      'second_name': secondName,
+      'created_at': createdAt.millisecondsSinceEpoch,
+      'updated_at': updatedAt.microsecondsSinceEpoch,
+    };
+  }
+
   static User fromMap(Map<String, dynamic> map) => User(
         classe: map['classe'],
-        fillieres:(map['fillieres']!=null)? json.decode(map['fillieres']) : null,
+        careers:(map['careers']!=null)? json.decode(map['careers']) : null,
         id: map['id'],
         notes:(map['notes']!=null)? json.decode(map['notes']) : null,
         pseudo: map['pseudo'],

@@ -18,12 +18,6 @@ class _SectorsPageState extends State<SectorsPage> {
   SectorBloc bloc = SectorBloc();
 
   @override
-  void initState() {
-    bloc.add(GetSectorsEvent());
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
@@ -33,6 +27,9 @@ class _SectorsPageState extends State<SectorsPage> {
       body: BlocBuilder<SectorBloc, SectorState>(
         bloc: bloc,
         builder: (context, state) {
+          if (state is SectorInitial) {
+            bloc.add(GetSectorsEvent());
+          }
           if (state is LoadingSectorState) {
             return const Center(
               child: CircularProgressIndicator(),

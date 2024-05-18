@@ -23,7 +23,7 @@ class UserDatabase {
       mypath.join(path, 'user_database.db'),
       onCreate: (db, version) {
         return db.execute(
-          "CREATE TABLE users(id INT PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, classe TEXT, fillieres TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
+          "CREATE TABLE users(id INT PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, classe TEXT, careers TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
         );
       },
       version: 1,
@@ -42,6 +42,18 @@ class UserDatabase {
     return List.generate(maps.length, (i) {
       return User.fromMap(maps[i]);
     });
+  }
+
+  Future<User?> getUser(int id) async {
+    final Database db = await instance.database;
+    List<Map<String, dynamic>> maps = await db.query('users',
+        columns: ['id', 'pseudo', 'first_name', 'second_name', 'classe', 'careers', 'notes', 'created_at', 'updated_at'],
+        where: 'id = ?',
+        whereArgs: [id]);
+    if (maps.isNotEmpty) {
+      return User.fromMap(maps.first);
+    }
+    return null;
   }
 
   Future<void> updateUser(User user) async {

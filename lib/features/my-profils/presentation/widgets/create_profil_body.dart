@@ -13,6 +13,7 @@ import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.da
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/injection/injection.dart';
+import 'package:gnac_orientation/core/utils/utils.dart';
 import 'package:gnac_orientation/features/my-class/presentation/my_class_screen.dart';
 import 'package:gnac_orientation/features/my-profils/presentation/bloc/my_profile_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -285,25 +286,18 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                     getIt<AppConstant>().myUserData.addAll(user.toMap());
 
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Profile créer avec success 👌',
-                          ),
-                        ),
+                      showSnackBar(
+                        context: context,
+                        msg: "Profile créer avec succès",
+                        success: true,
                       );
+
                       AutoRouter.of(context).pushNamed(MyClassScreen.routeName);
                     }
                   } catch (e) {
                     debugPrint("Error : $e");
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Quelque chose s\'est mal passée 😢',
-                          ),
-                        ),
-                      );
+                      showSnackBar(context: context);
                     }
                   }
                 }

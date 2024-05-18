@@ -13,6 +13,7 @@ class SectorBloc extends Bloc<SectorEvent, SectorState> {
     on<GetSectorsEvent>((event, emit) {
       try {
         emit(LoadingSectorState());
+        
         Map<String, dynamic> userData = getIt<AppConstant>().myUserData;
         List<String> careers = userData['careers'];
         String myClass = userData['Série'];

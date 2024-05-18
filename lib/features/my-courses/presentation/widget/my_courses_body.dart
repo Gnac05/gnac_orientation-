@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:gnac_orientation/core/data/user_local_datasource.dart';
+import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:gnac_orientation/core/presentation/widgets/info_widget.dart';
 import 'package:gnac_orientation/core/presentation/widgets/next_button_widget.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
 import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
+import 'package:gnac_orientation/core/utils/utils.dart';
 import 'package:gnac_orientation/features/my-courses/presentation/bloc/my_course_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -283,7 +286,7 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
             Padding(
               padding: const EdgeInsets.all(16),
               child: NextButtonWidget(
-                onPressed: () {
+                onPressed: () async {
                   if (_notesKey.currentState!.saveAndValidate()) {
                     if (myClass.contains("A")) {
                       final key1 = _notesKey.currentState!.value["LV1M"];
@@ -312,12 +315,16 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                           coursesMap.toString(),
                         );
 
+                        await updateNotes(coursesMap, context);
+
                         getIt<AppConstant>()
                             .myUserData
                             .addAll({"Matières": coursesMap});
-                        AutoRouter.of(context).push(
-                          const CareersRoute(),
-                        );
+                        if (context.mounted) {
+                          AutoRouter.of(context).push(
+                            const CareersRoute(),
+                          );
+                        }
                       }
                     } else if (myClass == "B") {
                       widget.coursesMap.forEach((key, value) {
@@ -332,12 +339,16 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                       debugPrint(
                         coursesMap.toString(),
                       );
+                      await updateNotes(coursesMap, context);
+
                       getIt<AppConstant>()
                           .myUserData
                           .addAll({"Matières": coursesMap});
-                      AutoRouter.of(context).push(
-                        const CareersRoute(),
-                      );
+                      if (context.mounted) {
+                        AutoRouter.of(context).push(
+                          const CareersRoute(),
+                        );
+                      }
                     } else {
                       // Other class
                       widget.coursesMap.forEach((key, value) {
@@ -348,13 +359,16 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                       debugPrint(
                         widget.coursesMap.toString(),
                       );
+                      await updateNotes(widget.coursesMap, context);
 
                       getIt<AppConstant>()
                           .myUserData
                           .addAll({"Matières": widget.coursesMap});
-                      AutoRouter.of(context).push(
-                        const CareersRoute(),
-                      );
+                      if (context.mounted) {
+                        AutoRouter.of(context).push(
+                          const CareersRoute(),
+                        );
+                      }
                     }
 
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
@@ -374,5 +388,31 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
         ),
       ),
     );
+  }
+}
+
+Future updateNotes(Map<String, dynamic> notes, BuildContext context) async {
+  int id = getIt<AppConstant>().myUserData['id'];
+  UserDatabase userDatabase = UserDatabase.instance;
+  User? user = await userDatabase.getUser(id);
+  if (user != null) {
+    user.notes = notes;
+    user.updatedAt = DateTime.now();
+    await userDatabase.updateUser(user);
+    if (context.mounted) {
+      showSnackBar(
+        context: context,
+        success: true,
+        msg: "Vos notes ont bien été sauvegarder",
+      );
+    }
+  } else {
+    debugPrint(
+        "###################### Error : User Not Found ################################");
+    if (context.mounted) {
+      showSnackBar(
+        context: context,
+      );
+    }
   }
 }
