@@ -288,89 +288,82 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
               child: NextButtonWidget(
                 onPressed: () async {
                   if (_notesKey.currentState!.saveAndValidate()) {
-                    if (myClass.contains("A")) {
-                      final key1 = _notesKey.currentState!.value["LV1M"];
-                      final key2 = _notesKey.currentState!.value["LV2M"];
-                      if (key1 == key2) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                              "LV1 doit être différent de LV2",
+                    try {
+                      if (myClass.contains("A")) {
+                        final key1 = _notesKey.currentState!.value["LV1M"];
+                        final key2 = _notesKey.currentState!.value["LV2M"];
+                        if (key1 == key2) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                "LV1 doit être différent de LV2",
+                              ),
                             ),
-                          ),
-                        );
-                      } else {
+                          );
+                        } else {
+                          widget.coursesMap.forEach((key, value) {
+                            widget.coursesMap[key]["Note"] = double.parse(
+                                _notesKey.currentState!.value[key].toString());
+                          });
+                          // LV1M or LV2M
+                          final map1 = widget.coursesMap["LV1"];
+                          final map2 = widget.coursesMap["LV2"];
+                          Map<String, dynamic> coursesMap = widget.coursesMap;
+                          coursesMap[key1] = map1;
+                          coursesMap[key2] = map2;
+
+                          debugPrint(
+                            coursesMap.toString(),
+                          );
+
+                          await updateNotes(coursesMap, context);
+
+                          getIt<AppConstant>()
+                              .myUserData
+                              .addAll({"Matières": coursesMap});
+                        }
+                      } else if (myClass == "B") {
                         widget.coursesMap.forEach((key, value) {
                           widget.coursesMap[key]["Note"] = double.parse(
                               _notesKey.currentState!.value[key].toString());
                         });
-                        // LV1M or LV2M
+
+                        final key1 = _notesKey.currentState!.value["LV1M"];
                         final map1 = widget.coursesMap["LV1"];
-                        final map2 = widget.coursesMap["LV2"];
                         Map<String, dynamic> coursesMap = widget.coursesMap;
                         coursesMap[key1] = map1;
-                        coursesMap[key2] = map2;
-
                         debugPrint(
                           coursesMap.toString(),
                         );
-
                         await updateNotes(coursesMap, context);
 
                         getIt<AppConstant>()
                             .myUserData
                             .addAll({"Matières": coursesMap});
-                        if (context.mounted) {
-                          AutoRouter.of(context).push(
-                            const CareersRoute(),
-                          );
-                        }
+                      } else {
+                        // Other class
+                        widget.coursesMap.forEach((key, value) {
+                          widget.coursesMap[key]["Note"] = double.parse(
+                              _notesKey.currentState!.value[key].toString());
+                        });
+
+                        debugPrint(
+                          widget.coursesMap.toString(),
+                        );
+                        await updateNotes(widget.coursesMap, context);
+
+                        getIt<AppConstant>()
+                            .myUserData
+                            .addAll({"Matières": widget.coursesMap});
                       }
-                    } else if (myClass == "B") {
-                      widget.coursesMap.forEach((key, value) {
-                        widget.coursesMap[key]["Note"] = double.parse(
-                            _notesKey.currentState!.value[key].toString());
-                      });
-
-                      final key1 = _notesKey.currentState!.value["LV1M"];
-                      final map1 = widget.coursesMap["LV1"];
-                      Map<String, dynamic> coursesMap = widget.coursesMap;
-                      coursesMap[key1] = map1;
-                      debugPrint(
-                        coursesMap.toString(),
-                      );
-                      await updateNotes(coursesMap, context);
-
-                      getIt<AppConstant>()
-                          .myUserData
-                          .addAll({"Matières": coursesMap});
                       if (context.mounted) {
                         AutoRouter.of(context).push(
                           const CareersRoute(),
                         );
                       }
-                    } else {
-                      // Other class
-                      widget.coursesMap.forEach((key, value) {
-                        widget.coursesMap[key]["Note"] = double.parse(
-                            _notesKey.currentState!.value[key].toString());
-                      });
-
-                      debugPrint(
-                        widget.coursesMap.toString(),
-                      );
-                      await updateNotes(widget.coursesMap, context);
-
-                      getIt<AppConstant>()
-                          .myUserData
-                          .addAll({"Matières": widget.coursesMap});
-                      if (context.mounted) {
-                        AutoRouter.of(context).push(
-                          const CareersRoute(),
-                        );
-                      }
+                    } catch (e) {
+                      debugPrint("Error : $e");
                     }
-
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
                   }
                 },

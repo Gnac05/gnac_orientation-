@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:sqflite/sqflite.dart';
 // ignore: depend_on_referenced_packages
@@ -46,12 +47,26 @@ class UserDatabase {
 
   Future<User?> getUser(int id) async {
     final Database db = await instance.database;
-    List<Map<String, dynamic>> maps = await db.query('users',
-        columns: ['id', 'pseudo', 'first_name', 'second_name', 'classe', 'careers', 'notes', 'created_at', 'updated_at'],
-        where: 'id = ?',
-        whereArgs: [id]);
-    if (maps.isNotEmpty) {
-      return User.fromMap(maps.first);
+    try {
+      List<Map<String, dynamic>> maps = await db.query('users',
+          columns: [
+            'id',
+            'pseudo',
+            'first_name',
+            'second_name',
+            'classe',
+            'careers',
+            'notes',
+            'created_at',
+            'updated_at'
+          ],
+          where: 'id = ?',
+          whereArgs: [id]);
+      if (maps.isNotEmpty) {
+        return User.fromMap(maps.first);
+      }
+    } catch (e) {
+      debugPrint("Error : $e");
     }
     return null;
   }
@@ -66,7 +81,7 @@ class UserDatabase {
     );
   }
 
-  Future<void> deleteUser(String id) async {
+  Future<void> deleteUser(int id) async {
     final Database db = await instance.database;
     await db.delete(
       'users',
