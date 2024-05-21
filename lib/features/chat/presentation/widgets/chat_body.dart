@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
@@ -22,6 +23,9 @@ class _ChatBodyState extends State<ChatBody> {
   // final GeminiAiChat geminiAiChat = GeminiAiChat();
   @override
   void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     super.initState();
   }
 
@@ -76,7 +80,8 @@ class _ChatBodyState extends State<ChatBody> {
                     physics: const BouncingScrollPhysics(),
                     // reverse: true,
                     controller: getIt<GeminiAiChat>().scrollController,
-                    itemCount:loading? discussion.length + 1 : discussion.length,
+                    itemCount:
+                        loading ? discussion.length + 1 : discussion.length,
                     itemBuilder: (context, index) {
                       if (loading && discussion.length == index) {
                         return Padding(
@@ -86,7 +91,7 @@ class _ChatBodyState extends State<ChatBody> {
                       }
                       if (index == discussion.length - 1) {
                         return Padding(
-                          padding:  EdgeInsets.only(bottom:loading? 0: 100),
+                          padding: EdgeInsets.only(bottom: loading ? 0 : 100),
                           child: discussion.last,
                         );
                       }
@@ -144,13 +149,15 @@ class _ChatBodyState extends State<ChatBody> {
                           ? const CircularProgressIndicator()
                           : IconButton(
                               onPressed: () {
-                                bloc.add(
-                                  SendMessageEvent(
-                                    lastDiscussion: discussion,
-                                    message: smsCtr.text,
-                                  ),
-                                );
-                                smsCtr.clear();
+                                if (smsCtr.text.trim() != "") {
+                                  bloc.add(
+                                    SendMessageEvent(
+                                      lastDiscussion: discussion,
+                                      message: smsCtr.text.trim(),
+                                    ),
+                                  );
+                                  smsCtr.clear();
+                                }
                               },
                               icon: FaIcon(
                                 Icons.send_rounded,

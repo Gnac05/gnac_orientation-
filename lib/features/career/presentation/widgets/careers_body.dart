@@ -109,7 +109,7 @@ Future updateCareers(List<String> careers, BuildContext context) async {
       showSnackBar(
         context: context,
         success: true,
-        msg: "Vos corrières ont bien été sauvegarder",
+        msg: "Vos carrières ont bien été sauvegarder",
       );
     }
   } else {

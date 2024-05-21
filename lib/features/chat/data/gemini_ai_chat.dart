@@ -46,17 +46,21 @@ class GeminiAiChat {
   bool initChat() {
     if (hasModel) {
       // Initialize the chat
-      chat = model!.startChat(history: [
-        Content.text(
-          'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC béninois. Voici mes données : ${getIt<AppConstant>().myUserData}',
-        ),
-        Content.model([
-          TextPart(
-              'Je serais très heureux de pouvoir vous aider a bien choisir votre filières.'),
-        ])
-      ], safetySettings: [
-        SafetySetting(HarmCategory.dangerousContent, HarmBlockThreshold.none),
-      ]);
+      String classe = getIt<AppConstant>().myUserData['Série'];
+      chat = model!.startChat(
+        history: [
+          Content.text(
+            'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC $classe béninois. Voici mes données : ${getIt<AppConstant>().myUserData.toString()}',
+          ),
+          Content.model([
+            TextPart(
+                'Je serais très heureux de pouvoir vous aider a bien choisir votre filières tout en tenant compte des informations que vous m\'aviez fornir sur vous ainsi que des carrers disponible dans votre pays comme : ${getIt<AppConstant>().allCarrers[classe]} ainsi que ses données : ${getIt<AppConstant>().data[classe]}'),
+          ])
+        ],
+        // safetySettings: [
+        //   SafetySetting(HarmCategory.dangerousContent, HarmBlockThreshold.none),
+        // ],
+      );
       return true;
     }
     return false;

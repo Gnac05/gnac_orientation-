@@ -14,8 +14,8 @@ class MyProfilsBody extends StatefulWidget {
   State<MyProfilsBody> createState() => _MyProfilsBodyState();
 }
 
-class _MyProfilsBodyState extends State<MyProfilsBody> {
   final bloc = MyProfileBloc();
+class _MyProfilsBodyState extends State<MyProfilsBody> {
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +72,10 @@ class _MyProfilsBodyState extends State<MyProfilsBody> {
                     crossAxisCount: 3,
                   ),
                   itemBuilder: (context, index) => MyProfilWidget(
-                    pseudo:index == 0? "pseudo": users[index].pseudo,
+                    pseudo: index == 0 ? "pseudo" : users[index - 1].pseudo,
                     willNewProfil: index == 0,
+                    user: index == 0 ? null : users[index - 1],
+                    picture: index == 0 ? null : users[index - 1].picture,
                   ),
                   itemCount: users.length + 1,
                 );

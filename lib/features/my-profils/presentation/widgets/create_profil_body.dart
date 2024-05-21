@@ -275,6 +275,7 @@ class _CreateProfilBodyState extends State<CreateProfilBody> {
                       pseudo: pseudo,
                       firstName: firstName,
                       secondName: lastName,
+                      picture: picture,
                       createdAt: DateTime.now(),
                       updatedAt: DateTime.now(),
                     );

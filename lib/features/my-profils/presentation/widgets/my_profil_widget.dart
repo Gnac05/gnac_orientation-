@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gnac_orientation/core/data/user_local_datasource.dart';
 import 'package:gnac_orientation/core/domain/model/user.dart';
 import 'package:gnac_orientation/core/styles/app_theme.dart';
@@ -10,7 +9,10 @@ import 'package:gnac_orientation/core/utils/constant.dart';
 import 'package:gnac_orientation/core/utils/injection/injection.dart';
 import 'package:gnac_orientation/core/utils/routes/app_router.dart';
 import 'package:gnac_orientation/core/utils/utils.dart';
+import 'package:gnac_orientation/features/my-profils/presentation/bloc/my_profile_bloc.dart';
 import 'package:gnac_orientation/features/my-profils/presentation/create_profil_page.dart';
+
+import 'my_profils_body.dart';
 
 class MyProfilWidget extends StatelessWidget {
   final String pseudo;
@@ -30,8 +32,10 @@ class MyProfilWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (willNewProfil == true || user == null) {
+          getIt<AppConstant>().myUserData.clear();
           AutoRouter.of(context).pushNamed(CreateProfilPage.routeName);
         } else {
+          getIt<AppConstant>().myUserData.clear();
           getIt<AppConstant>().myUserData.addAll(user!.toUserDataMap());
           if (user!.classe == null) {
             context.pushRoute(const MyClassRoute());
@@ -71,85 +75,88 @@ class MyProfilWidget extends StatelessWidget {
                     size: willNewProfil ? 90 : 100,
                   ),
                 ),
-              if(!willNewProfil)  Positioned(
-                  top: 6,
-                  right: 6,
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white.withOpacity(0.45),
-                    ),
-                    child: IconButton(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: const Text("Suppression de profil"),
-                            content:
-                                const Text("Voulez vous supprimer ce profil ?"),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () => context.maybePop(),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll<Color>(
-                                    AppTheme().grey!,
+                if (!willNewProfil)
+                  Positioned(
+                    top: 6,
+                    right: 6,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.white.withOpacity(0.45),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: const Text("Suppression de profil"),
+                              content: const Text(
+                                  "Voulez vous supprimer ce profil ?"),
+                              actions: [
+                                ElevatedButton(
+                                  onPressed: () => context.maybePop(),
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStatePropertyAll<Color>(
+                                      AppTheme().grey!,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    "Non",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
                                   ),
                                 ),
-                                child: const Text(
-                                  "Non",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () async {
-                                  try {
-                                    UserDatabase userDatabase =
-                                        UserDatabase.instance;
-                                    await userDatabase.deleteUser(user!.id);
-                                    if (context.mounted) {
-                                      showSnackBar(
-                                        context: context,
-                                        success: true,
-                                        msg: "$pseudo a bien été supprimer",
-                                      );
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    try {
+                                      UserDatabase userDatabase =
+                                          UserDatabase.instance;
+                                      await userDatabase.deleteUser(user!.id);
+                                      if (context.mounted) {
+                                        context.maybePop();
+                                        bloc.add(GetUsersEvent());
+                                        showSnackBar(
+                                          context: context,
+                                          success: true,
+                                          msg: "$pseudo a bien été supprimer",
+                                        );
+                                      }
+                                    } catch (e) {
+                                      debugPrint("Error : $e");
+                                      if (context.mounted) {
+                                        showSnackBar(context: context);
+                                      }
                                     }
-                                  } catch (e) {
-                                    debugPrint("Error : $e");
-                                    if (context.mounted) {
-                                      showSnackBar(context: context);
-                                    }
-                                  }
-                                },
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll<Color>(
-                                    AppTheme().appSecondaryColor!,
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStatePropertyAll<Color>(
+                                      AppTheme().appSecondaryColor!,
+                                    ),
                                   ),
-                                ),
-                                child: const Text(
-                                  "Oui",
-                                  style: TextStyle(
-                                    color: Colors.white,
+                                  child: const Text(
+                                    "Oui",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                              )
-                            ],
-                          ),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.delete,
-                        size: 15,
-                        color: AppTheme().appSecondaryColor,
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.delete,
+                          size: 15,
+                          color: AppTheme().appSecondaryColor,
+                        ),
                       ),
                     ),
-                  ),
-                )
+                  )
               ],
             ),
           ),

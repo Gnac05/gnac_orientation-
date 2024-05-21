@@ -111,7 +111,7 @@ class _SectorWidgetState extends State<SectorWidget> {
                               ),
                             ),
                             SizedBox(
-                                width: 150,
+                                width: 100,
                                 child: Text(
                                   widget.sector.university,
                                   style: const TextStyle(

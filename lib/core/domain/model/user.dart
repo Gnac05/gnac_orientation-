@@ -8,7 +8,7 @@ class User {
   final String? secondName;
   String? classe;
   Map<String, dynamic>? notes;
-  List<String>? careers;
+  List<dynamic>? careers;
   final DateTime createdAt;
    DateTime updatedAt;
 
@@ -41,11 +41,12 @@ class User {
 
   Map<String, dynamic> toUserDataMap() {
     return {
+      'id': id,
       'Série': classe, // #
-      'careers': json.encode(careers), // #
+      'careers': careers, // #
       'picture': picture,
       'first_name': firstName,
-      'Matières': json.encode(notes), // #
+      'Matières': notes, // #
       'pseudo': pseudo,
       'second_name': secondName,
       'created_at': createdAt.millisecondsSinceEpoch,

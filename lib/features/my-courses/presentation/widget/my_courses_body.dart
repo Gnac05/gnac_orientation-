@@ -174,15 +174,16 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                   child: FormBuilderTextField(
                     name: key,
                     validator: FormBuilderValidators.compose([
-                      FormBuilderValidators.required(
-                        errorText: 'Requis',
-                      ),
+                      FormBuilderValidators.required(errorText: 'Requis'),
+                      FormBuilderValidators.min(0, errorText: "Attention!!!", inclusive: false,),
+                      FormBuilderValidators.max(20, errorText: "Attention!!!"),
                     ]),
                     inputFormatters: [
                       FilteringTextInputFormatter.deny(','),
                       FilteringTextInputFormatter.deny('-'),
                       FilteringTextInputFormatter.deny(' '),
                     ],
+                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                       color: AppTheme().appSecondaryColor,
@@ -362,7 +363,14 @@ class _MyCoursesBodyState extends State<MyCoursesBody> {
                         );
                       }
                     } catch (e) {
+                      debugPrint(
+                          "###################### Error : User Not Found ################################");
                       debugPrint("Error : $e");
+                      if (context.mounted) {
+                        showSnackBar(
+                          context: context,
+                        );
+                      }
                     }
                     // myCourseBloc.add(ResultsCourses(userData: coursesMap));
                   }
@@ -388,24 +396,24 @@ Future updateNotes(Map<String, dynamic> notes, BuildContext context) async {
   int id = getIt<AppConstant>().myUserData['id'];
   UserDatabase userDatabase = UserDatabase.instance;
   User? user = await userDatabase.getUser(id);
-  if (user != null) {
-    user.notes = notes;
-    user.updatedAt = DateTime.now();
-    await userDatabase.updateUser(user);
-    if (context.mounted) {
-      showSnackBar(
-        context: context,
-        success: true,
-        msg: "Vos notes ont bien été sauvegarder",
-      );
-    }
-  } else {
-    debugPrint(
-        "###################### Error : User Not Found ################################");
-    if (context.mounted) {
-      showSnackBar(
-        context: context,
-      );
-    }
+  // if (user != null) {
+  user!.notes = notes;
+  user.updatedAt = DateTime.now();
+  await userDatabase.updateUser(user);
+  if (context.mounted) {
+    showSnackBar(
+      context: context,
+      success: true,
+      msg: "Vos notes ont bien été sauvegarder",
+    );
   }
+  // } else {
+  //   debugPrint(
+  //       "###################### Error : User Not Found ################################");
+  //   if (context.mounted) {
+  //     showSnackBar(
+  //       context: context,
+  //     );
+  //   }
+  // }
 }

@@ -24,7 +24,7 @@ class UserDatabase {
       mypath.join(path, 'user_database.db'),
       onCreate: (db, version) {
         return db.execute(
-          "CREATE TABLE users(id INT PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, classe TEXT, careers TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
+          "CREATE TABLE users(id INTEGER PRIMARY KEY, pseudo TEXT NOT NULL, first_name TEXT, second_name TEXT, picture TEXT, classe TEXT, careers TEXT, notes TEXT, created_at INTEGER, updated_at INTEGER)",
         );
       },
       version: 1,
@@ -38,32 +38,41 @@ class UserDatabase {
   }
 
   Future<List<User>> getUsers() async {
-    final Database db = await instance.database;
-    final List<Map<String, dynamic>> maps = await db.query('users');
-    return List.generate(maps.length, (i) {
-      return User.fromMap(maps[i]);
-    });
+    try {
+      final Database db = await instance.database;
+      final List<Map<String, dynamic>> maps = await db.query('users');
+      final users = List.generate(maps.length, (i) {
+        return User.fromMap(maps[i]);
+      });
+      return users;
+    } catch (e) {
+      debugPrint('Error : $e');
+      return [];
+    }
   }
 
   Future<User?> getUser(int id) async {
     final Database db = await instance.database;
     try {
-      List<Map<String, dynamic>> maps = await db.query('users',
-          columns: [
-            'id',
-            'pseudo',
-            'first_name',
-            'second_name',
-            'classe',
-            'careers',
-            'notes',
-            'created_at',
-            'updated_at'
-          ],
-          where: 'id = ?',
-          whereArgs: [id]);
+      List<Map> maps = await db.query(
+        'users',
+        columns: [
+          'id',
+          'pseudo',
+          'first_name',
+          'second_name',
+          'classe',
+          'careers',
+          'notes',
+          'picture',
+          'created_at',
+          'updated_at'
+        ],
+        where: 'id = ?',
+        whereArgs: [id],
+      );
       if (maps.isNotEmpty) {
-        return User.fromMap(maps.first);
+        return User.fromMap(maps.first as Map<String, dynamic>);
       }
     } catch (e) {
       debugPrint("Error : $e");

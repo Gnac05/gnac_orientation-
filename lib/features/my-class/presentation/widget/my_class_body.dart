@@ -101,8 +101,8 @@ class MyClassBody extends StatelessWidget {
                   debugPrint('##=======> Ma Série : $myClass');
                   try {
                     UserDatabase userDatabase = UserDatabase.instance;
-                    User user = User.fromMap(getIt<AppConstant>().myUserData);
-                    user.updatedAt = DateTime.now();
+                    User? user =await userDatabase.getUser(getIt<AppConstant>().myUserData['id']);
+                    user!.updatedAt = DateTime.now();
                     user.classe = myClass;
                     await userDatabase.updateUser(user);
                     getIt<AppConstant>().myUserData.addAll({
