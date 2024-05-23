@@ -8493,20 +8493,20 @@ class AppConstant {
             "Aménagement et Gestion des Ressources Naturelles"
           ]
         },
-        "UNA": {
-          "Université": "Université Nationale d'Agriculture",
-          "Ecoles": [
-            "EAq (Ecole d'Aquaculture)",
-            "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
-            "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
-            "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
-            "Ecole de Génie Rural (EGR)",
-            "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
-            "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
-            "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
-            "Ecole de Foresterie Tropicale"
-          ]
-        }
+        // "UNA": {
+        //   "Université": "Université Nationale d'Agriculture",
+        //   "Ecoles": [
+        //     "EAq (Ecole d'Aquaculture)",
+        //     "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
+        //     "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
+        //     "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
+        //     "Ecole de Génie Rural (EGR)",
+        //     "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
+        //     "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
+        //     "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
+        //     "Ecole de Foresterie Tropicale"
+        //   ]
+        // }
       },
       "Informatique": {
         "IFRI": {
@@ -8635,20 +8635,20 @@ class AppConstant {
             "Aménagement et Gestion des Ressources Naturelles"
           ]
         },
-        "UNA": {
-          "Université": "Université Nationale d'Agriculture",
-          "Ecoles": [
-            "EAq (Ecole d'Aquaculture)",
-            "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
-            "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
-            "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
-            "Ecole de Génie Rural (EGR)",
-            "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
-            "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
-            "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
-            "Ecole de Foresterie Tropicale"
-          ]
-        }
+        // "UNA": {
+        //   "Université": "Université Nationale d'Agriculture",
+        //   "Ecoles": [
+        //     "EAq (Ecole d'Aquaculture)",
+        //     "EHAEV (Ecole d'Horticulture et d'Aménagement des Espaces Verts)",
+        //     "EGPVS (Ecole de Gestion et de Production Végétale et Semencière)",
+        //     "ESTCTPA (Ecole des Sciences et Techniques de Conservation et de Transformation des Produits Agricoles)",
+        //     "Ecole de Génie Rural (EGR)",
+        //     "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGESE)",
+        //     "EAPA (Ecole d'Agrobuisness et de Politiques Agricoles)",
+        //     "ERSVA (Ecole de Sociologie rurale et de Vulgarisation Agricole)",
+        //     "Ecole de Foresterie Tropicale"
+        //   ]
+        // }
       },
       "Informatique": {
         "IFRI": {

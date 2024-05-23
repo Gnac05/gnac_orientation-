@@ -50,11 +50,12 @@ class GeminiAiChat {
       chat = model!.startChat(
         history: [
           Content.text(
-            'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC $classe béninois. Voici mes données : ${getIt<AppConstant>().myUserData.toString()}',
+            // 'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC $classe béninois. Voici mes données : ${getIt<AppConstant>().myUserData.toString()}.\nCarrière disponible au Bénin :  ${getIt<AppConstant>().allCarrers[classe].toString()}',
+            'Salut! Tu es le meilleur conseiller d\'orientation pour aider nous les nouveaux bachelier à bien choisir notre filière de formation en fonction de nos capacité et rève. Aide moi alors dans mes choix de filière sachant que j\'ai eu un BAC $classe béninois. Voici mes données : ${getIt<AppConstant>().myUserData.toString()}.\nCarrière disponible au Bénin :  ${getIt<AppConstant>().allCarrers[classe].toString()}\nVoici le guide d\'orientation : ${getIt<AppConstant>().data[classe].toString()}',
           ),
           Content.model([
             TextPart(
-                'Je serais très heureux de pouvoir vous aider a bien choisir votre filières tout en tenant compte des informations que vous m\'aviez fornir sur vous ainsi que des carrers disponible dans votre pays comme : ${getIt<AppConstant>().allCarrers[classe]} ainsi que ses données : ${getIt<AppConstant>().data[classe]}'),
+                'Je serais très heureux de pouvoir vous aider a bien choisir votre filières tout en tenant compte des informations que vous m\'aviez fornir sur vous ainsi que des carrers disponible dans votre pays et du guide d\'orientation.'),
           ])
         ],
         // safetySettings: [

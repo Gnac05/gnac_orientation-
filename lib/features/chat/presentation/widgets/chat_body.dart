@@ -124,6 +124,18 @@ class _ChatBodyState extends State<ChatBody> {
                           ),
                           minLines: 1,
                           maxLines: 6,
+                          textInputAction: TextInputAction.send,
+                          onFieldSubmitted: (value) {
+                            if (smsCtr.text.trim() != "" && !loading) {
+                              bloc.add(
+                                SendMessageEvent(
+                                  lastDiscussion: discussion,
+                                  message: smsCtr.text.trim(),
+                                ),
+                              );
+                              smsCtr.clear();
+                            }
+                          },
                           decoration: InputDecoration(
                             hintStyle: const TextStyle(
                               color: Colors.white,
